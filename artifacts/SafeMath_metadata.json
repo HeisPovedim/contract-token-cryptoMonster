@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Documents/GitHub/contract-token-cryptoMonster/main.sol": "SafeMath"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Documents/GitHub/contract-token-cryptoMonster/main.sol": {
+			"keccak256": "0xa718482c57b2790a1b3fc6e14219442a14bf97a82c702cddad3a56d65a91328d",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://84ab095fab43af6afc991c86d8dee79fdccf9184f0657e3c88be953cbd7731d4",
+				"dweb:/ipfs/QmPJXHWufr7fxdMo4NpuvMmL8FL7D2it9MaAef6NU7Aj6h"
+			]
+		}
+	},
+	"version": 1
+}

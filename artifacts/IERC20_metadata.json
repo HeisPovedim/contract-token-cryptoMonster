@@ -6,25 +6,29 @@
 	"output": {
 		"abi": [
 			{
+				"anonymous": false,
 				"inputs": [
 					{
-						"internalType": "string",
-						"name": "_name",
-						"type": "string"
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
 					},
 					{
-						"internalType": "string",
-						"name": "_symbol",
-						"type": "string"
+						"indexed": true,
+						"internalType": "address",
+						"name": "spender",
+						"type": "address"
 					},
 					{
+						"indexed": false,
 						"internalType": "uint256",
-						"name": "_totalCryptoMonster",
+						"name": "value",
 						"type": "uint256"
 					}
 				],
-				"stateMutability": "nonpayable",
-				"type": "constructor"
+				"name": "Approval",
+				"type": "event"
 			},
 			{
 				"anonymous": false,
@@ -32,19 +36,19 @@
 					{
 						"indexed": true,
 						"internalType": "address",
-						"name": "_from",
+						"name": "from",
 						"type": "address"
 					},
 					{
 						"indexed": true,
 						"internalType": "address",
-						"name": "_to",
+						"name": "to",
 						"type": "address"
 					},
 					{
 						"indexed": false,
 						"internalType": "uint256",
-						"name": "_value",
+						"name": "value",
 						"type": "uint256"
 					}
 				],
@@ -55,11 +59,16 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "spender",
 						"type": "address"
 					}
 				],
-				"name": "balance",
+				"name": "allowance",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -74,7 +83,31 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "_owner",
+						"name": "spender",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "approve",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
 						"type": "address"
 					}
 				],
@@ -106,16 +139,45 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "_to",
+						"name": "recipient",
 						"type": "address"
 					},
 					{
 						"internalType": "uint256",
-						"name": "_value",
+						"name": "amount",
 						"type": "uint256"
 					}
 				],
 				"name": "transfer",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "recipient",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "transferFrom",
 				"outputs": [
 					{
 						"internalType": "bool",
@@ -140,7 +202,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"Documents/GitHub/contract-token-cryptoMonster/temp.sol": "CryptoMonster"
+			"Documents/GitHub/contract-token-cryptoMonster/main.sol": "IERC20"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -154,11 +216,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"Documents/GitHub/contract-token-cryptoMonster/temp.sol": {
-			"keccak256": "0x891209177eb0a97a0e058835e2b8b29091c931e163bb831dd2822805c009e48d",
+		"Documents/GitHub/contract-token-cryptoMonster/main.sol": {
+			"keccak256": "0xa718482c57b2790a1b3fc6e14219442a14bf97a82c702cddad3a56d65a91328d",
+			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://a32e316eec1e640e93cd5da9faed4bae19e032e577c9ceda275b13df06cb0909",
-				"dweb:/ipfs/QmR8bYzq9KLniRD295yMctK6r4ihSS2XHKF34RQHGadXd5"
+				"bzz-raw://84ab095fab43af6afc991c86d8dee79fdccf9184f0657e3c88be953cbd7731d4",
+				"dweb:/ipfs/QmPJXHWufr7fxdMo4NpuvMmL8FL7D2it9MaAef6NU7Aj6h"
 			]
 		}
 	},
