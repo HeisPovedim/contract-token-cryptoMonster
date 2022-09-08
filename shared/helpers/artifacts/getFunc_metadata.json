@@ -1,0 +1,65 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "password",
+						"type": "string"
+					}
+				],
+				"name": "get_hash",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"GitHub/contract-token-cryptoMonster/shared/helpers/getFuncs.sol": "getFunc"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"GitHub/contract-token-cryptoMonster/shared/helpers/getFuncs.sol": {
+			"keccak256": "0x2fc617be28129e25d79d044fdf850509ab77230feaf2b0f59acbbd6f0d149d1a",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://ed6c35381cebea2b67a83b21560bf8f6661f72df3be8d953f0eb2601cbad62c5",
+				"dweb:/ipfs/QmZGNJ2TVMg7uPfoYfVoZvhxh85p8iQ8CjZkXxxT4tbcMQ"
+			]
+		}
+	},
+	"version": 1
+}

@@ -160,6 +160,25 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_password",
+						"type": "string"
+					}
+				],
+				"name": "get_hash",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "name",
 				"outputs": [
@@ -293,11 +312,19 @@
 	},
 	"sources": {
 		"GitHub/contract-token-cryptoMonster/components/CryptoMonster.sol": {
-			"keccak256": "0xd748ee54f00831eb1373cac4aea15fca5a24e9d0afbe5c0a88b47923765e84d1",
+			"keccak256": "0x34c01fd8512d4a170855fb81f81b69193b841407e014fb88ce9d7d073a324d3b",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://2ed64973b70806c25c4a79ff6862026444d834c371b8ae4e0a98eb7b2331dc42",
-				"dweb:/ipfs/QmU1MTQaHaCw1Gug7Co3XA5mLEyH1XdiSZ4HcaG2KiwxQA"
+				"bzz-raw://2fdb7dbee0586b1963445ebba9b461c409d41a943adb7e854f7c91ce258c98f3",
+				"dweb:/ipfs/QmagAF5nnHLZppu994Hvr8SpRNeRbjCzH2wiAQYy8RCunk"
+			]
+		},
+		"GitHub/contract-token-cryptoMonster/shared/helpers/getFuncs.sol": {
+			"keccak256": "0xd78096ea4d21ec0f610a5be13a77a034e900ec51d4dc49ae299f38fad6e88039",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://d794e2dd3fc294dde3840fc8c681ea2d0824c1c8a93e320945ff66c7524484ef",
+				"dweb:/ipfs/QmPnKUno429YrYZetVdXoxmtoMcYX7LBNabovmKsRDXGSV"
 			]
 		},
 		"GitHub/contract-token-cryptoMonster/shared/lib/IERC20.sol": {
@@ -314,6 +341,14 @@
 			"urls": [
 				"bzz-raw://7a5ff8e7dfa39317a4fb4bcf89c7adcd32fadf8e2614c9c2d313a84fa65449bd",
 				"dweb:/ipfs/Qmf9dYztjw9AZdsMuxW4YBNzE8Z9u2Ke9WBFhzSnbffKy4"
+			]
+		},
+		"GitHub/contract-token-cryptoMonster/shared/lib/structures.sol": {
+			"keccak256": "0x3dbd60a4516570ca546cf3baf4766e58bd907731dbb9166cc4fc450ba2ed5030",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://3b2c4a4b7bd5ea7a06e85c1b6483d16c16513ee562808792462141eb838ccafc",
+				"dweb:/ipfs/QmPNT2Dt7PiWsF6Qs7s8c1QuhZ8TLiKitFKP7UbwcLtoN6"
 			]
 		}
 	},
