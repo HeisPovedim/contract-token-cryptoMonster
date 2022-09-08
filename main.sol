@@ -3,27 +3,27 @@ pragma solidity >=0.7.0 <0.9.0;
 
 interface IERC20 {
     function totalSupply() external view returns (uint256);
-    function balanceOf(address account) external view returns (uint256);
-    function allowance(address owner, address spender) external view returns (uint256);
+    function balanceOf(address account) external view returns (uint256);                // позволяет посмотреть баланс любого пользователя
+    function allowance(address owner, address spender) external view returns (uint256); // посмотреть сколько АДРЕС owner разрешил использовать свое  количество токенов АДРЕСУ spender 
 
-    function transfer(address recipient, uint256 amount) external returns (bool);
-    function approve(address spender, uint256 amount) external returns (bool);
-    function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
+    function transfer(address recipient, uint256 amount) external returns (bool);                       // переслает  деньги с msg.sender другому пользователю
+    function approve(address spender, uint256 amount) external returns (bool);                          // разрешает какому-то АДРЕСУ распоряжаться определенным кол-вом токенов
+    function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);   // от когого-то АДРЕСА пересылает на определенный АДРЕС кол-во токенов
 
-    event Transfer(address indexed from, address indexed to, uint256 value);
-    event Approval(address indexed owner, address indexed spender, uint256 value);
+    event Transfer(address indexed from, address indexed to, uint256 value);        // евент о том, что произошел transfer c 1-го аккаунта на 2-ой, вызывает когда мы переводим токены
+    event Approval(address indexed owner, address indexed spender, uint256 value);  // вызывает когда мы с помощью функции: "approve", разрешаем использовать токены
 }
 
 contract SampleToken is IERC20 {
-    using SafeMath for uint256;
+    using SafeMath for uint256; // позволяет не выходить за пределы uint
 
     // COMMENT: Общие сведения по токену.
     string public constant name = "CryptoMonster";
     string public constant symbol = "CMON";
     uint8 public constant decimals = 12;
 
-    mapping(address => uint256) balances;
-    mapping(address => mapping (address => uint256)) allowed;
+    mapping(address => uint256) balances;   // баланс по адресу
+    mapping(address => mapping (address => uint256)) allowed;   
 
     uint256 totalSupply_;
 

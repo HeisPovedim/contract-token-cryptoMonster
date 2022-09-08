@@ -267,11 +267,11 @@
 	},
 	"sources": {
 		"Documents/GitHub/contract-token-cryptoMonster/main.sol": {
-			"keccak256": "0xa718482c57b2790a1b3fc6e14219442a14bf97a82c702cddad3a56d65a91328d",
+			"keccak256": "0xdfbbdb31cba946ad12558e3c23f5112697630f5684dae2d4cc514d465db60645",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://84ab095fab43af6afc991c86d8dee79fdccf9184f0657e3c88be953cbd7731d4",
-				"dweb:/ipfs/QmPJXHWufr7fxdMo4NpuvMmL8FL7D2it9MaAef6NU7Aj6h"
+				"bzz-raw://d8f9e1fe5013653fbe512d99d6a11cd557712278d113662bbd7ed89dc9d34b43",
+				"dweb:/ipfs/QmVfA1aTPf7iwEyRi5kfzekA96zEFQk8awQGD7wXQwPDJi"
 			]
 		}
 	},
