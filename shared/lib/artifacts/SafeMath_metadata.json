@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"GitHub/contract-token-cryptoMonster/shared/lib/SafeMath.sol": "SafeMath"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"GitHub/contract-token-cryptoMonster/shared/lib/SafeMath.sol": {
+			"keccak256": "0xf430ff20a1998bdd5fa93c6b9e623cce686a19b73e97f317012b06c01de28661",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://7a5ff8e7dfa39317a4fb4bcf89c7adcd32fadf8e2614c9c2d313a84fa65449bd",
+				"dweb:/ipfs/Qmf9dYztjw9AZdsMuxW4YBNzE8Z9u2Ke9WBFhzSnbffKy4"
+			]
+		}
+	},
+	"version": 1
+}
