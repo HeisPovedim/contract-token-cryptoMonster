@@ -40,9 +40,9 @@ contract CryptoMonster is IERC20, Main, PhaseSeed, PhasePrivate {
         structPhases_[publicProviderAdr].statusPhase = false;                                                                      // присвоение статуса фазы
 
         // COMMENT: Перечесление средств инвесторам.
-        transfer(investorFirstAdr, 600000);  // Investor1
-        transfer(investorSecondAdr, 800000); // Investor2
-        transfer(bestFriendAdr, 400000);     // Best friend
+        // transfer(investorFirstAdr, 600000);  // Investor1
+        // transfer(investorSecondAdr, 800000); // Investor2
+        // transfer(bestFriendAdr, 400000);     // Best friend
     }
 
     // COMMENT_FUNC: Функция покупки токена

@@ -348,11 +348,11 @@
 	},
 	"sources": {
 		"Documents/GitHub/contract-token-cryptoMonster/backend/components/CryptoMonster.sol": {
-			"keccak256": "0x0ebf2f2f94db6bfab21f7c02536d40a85749a2f7bf782cb5409077dd89d96e24",
+			"keccak256": "0x7200a6f4e2e7839a34e7e972bedbcfed29784dc00e46097a2e8e53cfb5ef26ac",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://79dd0e9c4bdda2c7a2b032082e9b191c4ff186f420a282c08ca48a2a246fc143",
-				"dweb:/ipfs/QmNnzp4w79ZY1qqsZg2gHc32P8vCfmJ6SnTS8eHJPa8Aky"
+				"bzz-raw://f574ca2ccb8af4f8ac6978b26de84c8e2a18ac86d416717120d363fabe71ba5f",
+				"dweb:/ipfs/QmWv7AaFBptQC9B8yfRjYvRWCosSpzLXoWx5uxoPyKPYch"
 			]
 		},
 		"Documents/GitHub/contract-token-cryptoMonster/backend/components/PhasePrivate.sol": {
