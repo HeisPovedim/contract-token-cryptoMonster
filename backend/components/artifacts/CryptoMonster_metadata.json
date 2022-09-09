@@ -1,0 +1,424 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "total",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_owner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_spender",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_value",
+						"type": "uint256"
+					}
+				],
+				"name": "Approval",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_from",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_to",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_value",
+						"type": "uint256"
+					}
+				],
+				"name": "Transfer",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bool",
+						"name": "_changeStatus",
+						"type": "bool"
+					}
+				],
+				"name": "acceptApplication",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_owner",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_delegate",
+						"type": "address"
+					}
+				],
+				"name": "allowance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_contactForCommunication",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "_userAdr",
+						"type": "address"
+					}
+				],
+				"name": "application",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_delegate",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_numTokens",
+						"type": "uint256"
+					}
+				],
+				"name": "approve",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_tokenOwner",
+						"type": "address"
+					}
+				],
+				"name": "balanceOf",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "buy",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "decimals",
+				"outputs": [
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_hash",
+						"type": "string"
+					}
+				],
+				"name": "get_keccak256",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "name",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "symbol",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "tokenPrice_",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalSupply",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_receiver",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_numTokens",
+						"type": "uint256"
+					}
+				],
+				"name": "transfer",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_owner",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_buyer",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_numTokens",
+						"type": "uint256"
+					}
+				],
+				"name": "transferFrom",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Documents/GitHub/contract-token-cryptoMonster/backend/components/CryptoMonster.sol": "CryptoMonster"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Documents/GitHub/contract-token-cryptoMonster/backend/components/CryptoMonster.sol": {
+			"keccak256": "0x0ebf2f2f94db6bfab21f7c02536d40a85749a2f7bf782cb5409077dd89d96e24",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://79dd0e9c4bdda2c7a2b032082e9b191c4ff186f420a282c08ca48a2a246fc143",
+				"dweb:/ipfs/QmNnzp4w79ZY1qqsZg2gHc32P8vCfmJ6SnTS8eHJPa8Aky"
+			]
+		},
+		"Documents/GitHub/contract-token-cryptoMonster/backend/components/PhasePrivate.sol": {
+			"keccak256": "0xb10734f833c3608bfda9ce0ef122b8af6de2f149160f414e1fde8251a265a84b",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://4f6203e623b16f8e532651e491d1567978631fb56c8e47d528e5b322cbfbb949",
+				"dweb:/ipfs/Qmbr3eg2r5anpdi18SZGcwHWkHsuFWaLSkPJf16rEUFEpj"
+			]
+		},
+		"Documents/GitHub/contract-token-cryptoMonster/backend/components/PhaseSeed.sol": {
+			"keccak256": "0x7eb7196e1b7b443e24557c7b762c5dae41c3a19237ce772fbba576a18ad0aaaa",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://8eec3fa265e4675e9e786dbbd60d81f54073a71b3d7c166d8c2aaba5053fe0a9",
+				"dweb:/ipfs/QmNWrixnhZwE74CxqxRvG23A71nWd5i1jm8Gub2H36Y1hx"
+			]
+		},
+		"Documents/GitHub/contract-token-cryptoMonster/backend/components/main.sol": {
+			"keccak256": "0x2b6f90db3286bd0b5474121cbe4494f8cf0d80a91fbc07d0c1285f7059dad479",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://a27fdbd0670496dcb4858537f21665266b3d6e9d850d9eee9698f8801aa8990c",
+				"dweb:/ipfs/QmNSUsQQrBfNEAeeuNuVfYFu2U4TTKDHx6283eTUJbMsLu"
+			]
+		},
+		"Documents/GitHub/contract-token-cryptoMonster/backend/shared/helpers/getFuncs.sol": {
+			"keccak256": "0x55073c985c0ace969bfd71eedd56019c7349e65b5ece564d2a0518810e901c81",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://b29b6d3e009cfcd406945988b1338f5512656f14a49fc8d8825024e81de023fe",
+				"dweb:/ipfs/QmVDcL7SM8t2R5ZAAGNFJhAUHvJQEX2wRrKihVWHiNLma2"
+			]
+		},
+		"Documents/GitHub/contract-token-cryptoMonster/backend/shared/helpers/validateFuncs.sol": {
+			"keccak256": "0x55a8643a4e2500eea6f59f7e7f566793931fec76dcb865f101a6f7bd99b6f503",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://bb96275c62c97e4259aa8c07867efff9a59d8968a2c668f84e597efba46b9252",
+				"dweb:/ipfs/QmPEDXJmNEX1skQRrvGdWtzsguaiW1MkGH3b3xnfoBZ3vG"
+			]
+		},
+		"Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/IERC20.sol": {
+			"keccak256": "0xaf036a21cac1b39999f4f57c20939eb30c1c818c3ad3ac99010fcbad0badb5ff",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://7f0cbb48bb4360ed1412721ecfbb7c2fb5ccd113b76d993fca357f4c999b7dc2",
+				"dweb:/ipfs/QmVsEVBc8wG37chWLLCM3AAdwJBppXqEqUBL3SWGuMqw1m"
+			]
+		},
+		"Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/SafeMath.sol": {
+			"keccak256": "0xf430ff20a1998bdd5fa93c6b9e623cce686a19b73e97f317012b06c01de28661",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://7a5ff8e7dfa39317a4fb4bcf89c7adcd32fadf8e2614c9c2d313a84fa65449bd",
+				"dweb:/ipfs/Qmf9dYztjw9AZdsMuxW4YBNzE8Z9u2Ke9WBFhzSnbffKy4"
+			]
+		},
+		"Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol": {
+			"keccak256": "0x3c4d55fff6547a670227273cabf6e5cd6279729590c2415e26148beed5975392",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://31dfe220e5e8f93ca63e6021e3fdf2115f3672410395d5ba5cceb197c48e921f",
+				"dweb:/ipfs/QmcMwAuz3HM2QT4HWoHUxny2HqbtibVdu3gDwkeEs9Xyn7"
+			]
+		}
+	},
+	"version": 1
+}

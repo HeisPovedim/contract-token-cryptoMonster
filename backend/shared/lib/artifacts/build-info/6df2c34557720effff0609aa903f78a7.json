@@ -1,0 +1,595 @@
+{
+	"id": "6df2c34557720effff0609aa903f78a7",
+	"_format": "hh-sol-build-info-1",
+	"solcVersion": "0.8.7",
+	"solcLongVersion": "0.8.7+commit.e28d00a7",
+	"input": {
+		"language": "Solidity",
+		"sources": {
+			"Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol": {
+				"content": "// SPDX-License-Identifier: GPL-3.0\r\npragma solidity >=0.7.0 <0.9.0;\r\n\r\ncontract structures {\r\n    enum Role {\r\n        SYSTEM\r\n\r\n    }\r\n    // COMMENT_SCTRUCT: Структура пользователей.\r\n    struct structUser {\r\n        string role;      // роль  \r\n        string login;     // логин\r\n        bytes32 password; // пароль\r\n        uint256 balances; // баланс\r\n    }\r\n    mapping (address => structUser) structUser_;                // обращение к структуре по АДРЕСАМ\r\n}"
+			}
+		},
+		"settings": {
+			"optimizer": {
+				"enabled": false,
+				"runs": 200
+			},
+			"outputSelection": {
+				"*": {
+					"": [
+						"ast"
+					],
+					"*": [
+						"abi",
+						"metadata",
+						"devdoc",
+						"userdoc",
+						"storageLayout",
+						"evm.legacyAssembly",
+						"evm.bytecode",
+						"evm.deployedBytecode",
+						"evm.methodIdentifiers",
+						"evm.gasEstimates",
+						"evm.assembly"
+					]
+				}
+			}
+		}
+	},
+	"output": {
+		"contracts": {
+			"Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol": {
+				"structures": {
+					"abi": [],
+					"devdoc": {
+						"kind": "dev",
+						"methods": {},
+						"version": 1
+					},
+					"evm": {
+						"assembly": "    /* \"Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol\":72:539  contract structures {\r... */\n  mstore(0x40, 0x80)\n  callvalue\n  dup1\n  iszero\n  tag_1\n  jumpi\n  0x00\n  dup1\n  revert\ntag_1:\n  pop\n  dataSize(sub_0)\n  dup1\n  dataOffset(sub_0)\n  0x00\n  codecopy\n  0x00\n  return\nstop\n\nsub_0: assembly {\n        /* \"Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol\":72:539  contract structures {\r... */\n      mstore(0x40, 0x80)\n      0x00\n      dup1\n      revert\n\n    auxdata: 0xa264697066735822122099814cb0e48356954e8ea8907c1d799b87ac946a2377640c19592047b6fdb77564736f6c63430008070033\n}\n",
+						"bytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"linkReferences": {},
+							"object": "6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea264697066735822122099814cb0e48356954e8ea8907c1d799b87ac946a2377640c19592047b6fdb77564736f6c63430008070033",
+							"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xF JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x3F DUP1 PUSH1 0x1D PUSH1 0x0 CODECOPY PUSH1 0x0 RETURN INVALID PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 SWAP10 DUP2 0x4C 0xB0 0xE4 DUP4 JUMP SWAP6 0x4E DUP15 0xA8 SWAP1 PUSH29 0x1D799B87AC946A2377640C19592047B6FDB77564736F6C634300080700 CALLER ",
+							"sourceMap": "72:467:0:-:0;;;;;;;;;;;;;;;;;;;"
+						},
+						"deployedBytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"immutableReferences": {},
+							"linkReferences": {},
+							"object": "6080604052600080fdfea264697066735822122099814cb0e48356954e8ea8907c1d799b87ac946a2377640c19592047b6fdb77564736f6c63430008070033",
+							"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 SWAP10 DUP2 0x4C 0xB0 0xE4 DUP4 JUMP SWAP6 0x4E DUP15 0xA8 SWAP1 PUSH29 0x1D799B87AC946A2377640C19592047B6FDB77564736F6C634300080700 CALLER ",
+							"sourceMap": "72:467:0:-:0;;;;;"
+						},
+						"gasEstimates": {
+							"creation": {
+								"codeDepositCost": "12600",
+								"executionCost": "66",
+								"totalCost": "12666"
+							}
+						},
+						"legacyAssembly": {
+							".code": [
+								{
+									"begin": 72,
+									"end": 539,
+									"name": "PUSH",
+									"source": 0,
+									"value": "80"
+								},
+								{
+									"begin": 72,
+									"end": 539,
+									"name": "PUSH",
+									"source": 0,
+									"value": "40"
+								},
+								{
+									"begin": 72,
+									"end": 539,
+									"name": "MSTORE",
+									"source": 0
+								},
+								{
+									"begin": 72,
+									"end": 539,
+									"name": "CALLVALUE",
+									"source": 0
+								},
+								{
+									"begin": 72,
+									"end": 539,
+									"name": "DUP1",
+									"source": 0
+								},
+								{
+									"begin": 72,
+									"end": 539,
+									"name": "ISZERO",
+									"source": 0
+								},
+								{
+									"begin": 72,
+									"end": 539,
+									"name": "PUSH [tag]",
+									"source": 0,
+									"value": "1"
+								},
+								{
+									"begin": 72,
+									"end": 539,
+									"name": "JUMPI",
+									"source": 0
+								},
+								{
+									"begin": 72,
+									"end": 539,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 72,
+									"end": 539,
+									"name": "DUP1",
+									"source": 0
+								},
+								{
+									"begin": 72,
+									"end": 539,
+									"name": "REVERT",
+									"source": 0
+								},
+								{
+									"begin": 72,
+									"end": 539,
+									"name": "tag",
+									"source": 0,
+									"value": "1"
+								},
+								{
+									"begin": 72,
+									"end": 539,
+									"name": "JUMPDEST",
+									"source": 0
+								},
+								{
+									"begin": 72,
+									"end": 539,
+									"name": "POP",
+									"source": 0
+								},
+								{
+									"begin": 72,
+									"end": 539,
+									"name": "PUSH #[$]",
+									"source": 0,
+									"value": "0000000000000000000000000000000000000000000000000000000000000000"
+								},
+								{
+									"begin": 72,
+									"end": 539,
+									"name": "DUP1",
+									"source": 0
+								},
+								{
+									"begin": 72,
+									"end": 539,
+									"name": "PUSH [$]",
+									"source": 0,
+									"value": "0000000000000000000000000000000000000000000000000000000000000000"
+								},
+								{
+									"begin": 72,
+									"end": 539,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 72,
+									"end": 539,
+									"name": "CODECOPY",
+									"source": 0
+								},
+								{
+									"begin": 72,
+									"end": 539,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 72,
+									"end": 539,
+									"name": "RETURN",
+									"source": 0
+								}
+							],
+							".data": {
+								"0": {
+									".auxdata": "a264697066735822122099814cb0e48356954e8ea8907c1d799b87ac946a2377640c19592047b6fdb77564736f6c63430008070033",
+									".code": [
+										{
+											"begin": 72,
+											"end": 539,
+											"name": "PUSH",
+											"source": 0,
+											"value": "80"
+										},
+										{
+											"begin": 72,
+											"end": 539,
+											"name": "PUSH",
+											"source": 0,
+											"value": "40"
+										},
+										{
+											"begin": 72,
+											"end": 539,
+											"name": "MSTORE",
+											"source": 0
+										},
+										{
+											"begin": 72,
+											"end": 539,
+											"name": "PUSH",
+											"source": 0,
+											"value": "0"
+										},
+										{
+											"begin": 72,
+											"end": 539,
+											"name": "DUP1",
+											"source": 0
+										},
+										{
+											"begin": 72,
+											"end": 539,
+											"name": "REVERT",
+											"source": 0
+										}
+									]
+								}
+							}
+						},
+						"methodIdentifiers": {}
+					},
+					"metadata": "{\"compiler\":{\"version\":\"0.8.7+commit.e28d00a7\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol\":\"structures\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol\":{\"keccak256\":\"0x29806c936323bae37cf30a73dcba35c42120c9ae7ee4eb09d18e443ce83207ed\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://095c8e1054183b8b6f505151a2f2ac4d2b7eac4394072296cef99113841803e5\",\"dweb:/ipfs/QmURXxESrWeLaFKAhpgbE2smVVMPPPrBcTbJ5Bqk6MrmvU\"]}},\"version\":1}",
+					"storageLayout": {
+						"storage": [
+							{
+								"astId": 17,
+								"contract": "Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol:structures",
+								"label": "structUser_",
+								"offset": 0,
+								"slot": "0",
+								"type": "t_mapping(t_address,t_struct(structUser)12_storage)"
+							}
+						],
+						"types": {
+							"t_address": {
+								"encoding": "inplace",
+								"label": "address",
+								"numberOfBytes": "20"
+							},
+							"t_bytes32": {
+								"encoding": "inplace",
+								"label": "bytes32",
+								"numberOfBytes": "32"
+							},
+							"t_mapping(t_address,t_struct(structUser)12_storage)": {
+								"encoding": "mapping",
+								"key": "t_address",
+								"label": "mapping(address => struct structures.structUser)",
+								"numberOfBytes": "32",
+								"value": "t_struct(structUser)12_storage"
+							},
+							"t_string_storage": {
+								"encoding": "bytes",
+								"label": "string",
+								"numberOfBytes": "32"
+							},
+							"t_struct(structUser)12_storage": {
+								"encoding": "inplace",
+								"label": "struct structures.structUser",
+								"members": [
+									{
+										"astId": 5,
+										"contract": "Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol:structures",
+										"label": "role",
+										"offset": 0,
+										"slot": "0",
+										"type": "t_string_storage"
+									},
+									{
+										"astId": 7,
+										"contract": "Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol:structures",
+										"label": "login",
+										"offset": 0,
+										"slot": "1",
+										"type": "t_string_storage"
+									},
+									{
+										"astId": 9,
+										"contract": "Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol:structures",
+										"label": "password",
+										"offset": 0,
+										"slot": "2",
+										"type": "t_bytes32"
+									},
+									{
+										"astId": 11,
+										"contract": "Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol:structures",
+										"label": "balances",
+										"offset": 0,
+										"slot": "3",
+										"type": "t_uint256"
+									}
+								],
+								"numberOfBytes": "128"
+							},
+							"t_uint256": {
+								"encoding": "inplace",
+								"label": "uint256",
+								"numberOfBytes": "32"
+							}
+						}
+					},
+					"userdoc": {
+						"kind": "user",
+						"methods": {},
+						"version": 1
+					}
+				}
+			}
+		},
+		"sources": {
+			"Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol": {
+				"ast": {
+					"absolutePath": "Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol",
+					"exportedSymbols": {
+						"structures": [
+							18
+						]
+					},
+					"id": 19,
+					"license": "GPL-3.0",
+					"nodeType": "SourceUnit",
+					"nodes": [
+						{
+							"id": 1,
+							"literals": [
+								"solidity",
+								">=",
+								"0.7",
+								".0",
+								"<",
+								"0.9",
+								".0"
+							],
+							"nodeType": "PragmaDirective",
+							"src": "37:31:0"
+						},
+						{
+							"abstract": false,
+							"baseContracts": [],
+							"contractDependencies": [],
+							"contractKind": "contract",
+							"fullyImplemented": true,
+							"id": 18,
+							"linearizedBaseContracts": [
+								18
+							],
+							"name": "structures",
+							"nameLocation": "81:10:0",
+							"nodeType": "ContractDefinition",
+							"nodes": [
+								{
+									"canonicalName": "structures.Role",
+									"id": 3,
+									"members": [
+										{
+											"id": 2,
+											"name": "SYSTEM",
+											"nameLocation": "120:6:0",
+											"nodeType": "EnumValue",
+											"src": "120:6:0"
+										}
+									],
+									"name": "Role",
+									"nameLocation": "104:4:0",
+									"nodeType": "EnumDefinition",
+									"src": "99:36:0"
+								},
+								{
+									"canonicalName": "structures.structUser",
+									"id": 12,
+									"members": [
+										{
+											"constant": false,
+											"id": 5,
+											"mutability": "mutable",
+											"name": "role",
+											"nameLocation": "249:4:0",
+											"nodeType": "VariableDeclaration",
+											"scope": 12,
+											"src": "242:11:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_string_storage_ptr",
+												"typeString": "string"
+											},
+											"typeName": {
+												"id": 4,
+												"name": "string",
+												"nodeType": "ElementaryTypeName",
+												"src": "242:6:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_string_storage_ptr",
+													"typeString": "string"
+												}
+											},
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 7,
+											"mutability": "mutable",
+											"name": "login",
+											"nameLocation": "290:5:0",
+											"nodeType": "VariableDeclaration",
+											"scope": 12,
+											"src": "283:12:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_string_storage_ptr",
+												"typeString": "string"
+											},
+											"typeName": {
+												"id": 6,
+												"name": "string",
+												"nodeType": "ElementaryTypeName",
+												"src": "283:6:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_string_storage_ptr",
+													"typeString": "string"
+												}
+											},
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 9,
+											"mutability": "mutable",
+											"name": "password",
+											"nameLocation": "332:8:0",
+											"nodeType": "VariableDeclaration",
+											"scope": 12,
+											"src": "324:16:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_bytes32",
+												"typeString": "bytes32"
+											},
+											"typeName": {
+												"id": 8,
+												"name": "bytes32",
+												"nodeType": "ElementaryTypeName",
+												"src": "324:7:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_bytes32",
+													"typeString": "bytes32"
+												}
+											},
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 11,
+											"mutability": "mutable",
+											"name": "balances",
+											"nameLocation": "375:8:0",
+											"nodeType": "VariableDeclaration",
+											"scope": 12,
+											"src": "367:16:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_uint256",
+												"typeString": "uint256"
+											},
+											"typeName": {
+												"id": 10,
+												"name": "uint256",
+												"nodeType": "ElementaryTypeName",
+												"src": "367:7:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												}
+											},
+											"visibility": "internal"
+										}
+									],
+									"name": "structUser",
+									"nameLocation": "220:10:0",
+									"nodeType": "StructDefinition",
+									"scope": 18,
+									"src": "213:194:0",
+									"visibility": "public"
+								},
+								{
+									"constant": false,
+									"id": 17,
+									"mutability": "mutable",
+									"name": "structUser_",
+									"nameLocation": "445:11:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 18,
+									"src": "413:43:0",
+									"stateVariable": true,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_mapping$_t_address_$_t_struct$_structUser_$12_storage_$",
+										"typeString": "mapping(address => struct structures.structUser)"
+									},
+									"typeName": {
+										"id": 16,
+										"keyType": {
+											"id": 13,
+											"name": "address",
+											"nodeType": "ElementaryTypeName",
+											"src": "422:7:0",
+											"typeDescriptions": {
+												"typeIdentifier": "t_address",
+												"typeString": "address"
+											}
+										},
+										"nodeType": "Mapping",
+										"src": "413:31:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_mapping$_t_address_$_t_struct$_structUser_$12_storage_$",
+											"typeString": "mapping(address => struct structures.structUser)"
+										},
+										"valueType": {
+											"id": 15,
+											"nodeType": "UserDefinedTypeName",
+											"pathNode": {
+												"id": 14,
+												"name": "structUser",
+												"nodeType": "IdentifierPath",
+												"referencedDeclaration": 12,
+												"src": "433:10:0"
+											},
+											"referencedDeclaration": 12,
+											"src": "433:10:0",
+											"typeDescriptions": {
+												"typeIdentifier": "t_struct$_structUser_$12_storage_ptr",
+												"typeString": "struct structures.structUser"
+											}
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"scope": 19,
+							"src": "72:467:0",
+							"usedErrors": []
+						}
+					],
+					"src": "37:502:0"
+				},
+				"id": 0
+			}
+		}
+	}
+}

@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol": "structures"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol": {
+			"keccak256": "0x3c4d55fff6547a670227273cabf6e5cd6279729590c2415e26148beed5975392",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://31dfe220e5e8f93ca63e6021e3fdf2115f3672410395d5ba5cceb197c48e921f",
+				"dweb:/ipfs/QmcMwAuz3HM2QT4HWoHUxny2HqbtibVdu3gDwkeEs9Xyn7"
+			]
+		}
+	},
+	"version": 1
+}

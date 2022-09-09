@@ -1,0 +1,1136 @@
+{
+	"id": "8e8b907ccfcff0635b2d8b1124efc950",
+	"_format": "hh-sol-build-info-1",
+	"solcVersion": "0.8.7",
+	"solcLongVersion": "0.8.7+commit.e28d00a7",
+	"input": {
+		"language": "Solidity",
+		"sources": {
+			"Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol": {
+				"content": "// SPDX-License-Identifier: GPL-3.0\r\npragma solidity >=0.7.0 <0.9.0;\r\n\r\ncontract structures {\r\n    // COMMENT: Роли для структуры пользователей.\r\n    enum Role {\r\n        SYSTEM_OWNER,\r\n        SYSTEM_PUBLIC,\r\n        SYSTEM_PRIVATE,\r\n        INVESTOR,\r\n        USER\r\n    }\r\n\r\n    // COMMENT_SCTRUCT: Структура пользователей.\r\n    struct structUser {\r\n        Role role;               // роль  \r\n        string login;            // логин\r\n        bytes32 password;        // пароль\r\n        uint256 balance_overall; // общий баланс\r\n        uint256 balance_seed;    // баланс SEED токенов\r\n        uint256 balance_private; // баланс PRIVATE токенов\r\n        uint256 balance_public;  // баланс PUBLIC токенов\r\n    }\r\n    mapping (address => structUser) structUser_; // обращение к структуре по АДРЕСАМ\r\n\r\n    // COMMENT_SCTRUC: Структура фазы.\r\n    struct structPhase {\r\n        bool statusSeed;\r\n        bool statusPrivate;\r\n        bool statusPublic;\r\n    }\r\n\r\n    // COMMENT_STRUCT: Структура заявок пользователей.\r\n    struct structApplication {\r\n        string name;                    // имя\r\n        string contactForCommunication; // контакты для связи\r\n        address userAdr;                // адрес пользователя\r\n        bool status;                    // статус заявки\r\n        bool reviewed;                  // была ли просмотрена заявка\r\n        bool exist;                     // заявка существует\r\n    }\r\n    mapping (address => structApplication) strucApplications_; // обращение к структуре по АДРЕСАМ\r\n}"
+			}
+		},
+		"settings": {
+			"optimizer": {
+				"enabled": false,
+				"runs": 200
+			},
+			"outputSelection": {
+				"*": {
+					"": [
+						"ast"
+					],
+					"*": [
+						"abi",
+						"metadata",
+						"devdoc",
+						"userdoc",
+						"storageLayout",
+						"evm.legacyAssembly",
+						"evm.bytecode",
+						"evm.deployedBytecode",
+						"evm.methodIdentifiers",
+						"evm.gasEstimates",
+						"evm.assembly"
+					]
+				}
+			}
+		}
+	},
+	"output": {
+		"contracts": {
+			"Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol": {
+				"structures": {
+					"abi": [],
+					"devdoc": {
+						"kind": "dev",
+						"methods": {},
+						"version": 1
+					},
+					"evm": {
+						"assembly": "    /* \"Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol\":72:1823  contract structures {\r... */\n  mstore(0x40, 0x80)\n  callvalue\n  dup1\n  iszero\n  tag_1\n  jumpi\n  0x00\n  dup1\n  revert\ntag_1:\n  pop\n  dataSize(sub_0)\n  dup1\n  dataOffset(sub_0)\n  0x00\n  codecopy\n  0x00\n  return\nstop\n\nsub_0: assembly {\n        /* \"Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol\":72:1823  contract structures {\r... */\n      mstore(0x40, 0x80)\n      0x00\n      dup1\n      revert\n\n    auxdata: 0xa2646970667358221220a6d186ba38e31b869d11559858cec11f5862a60a1a74b6ef82d1e3141f657db164736f6c63430008070033\n}\n",
+						"bytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"linkReferences": {},
+							"object": "6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea2646970667358221220a6d186ba38e31b869d11559858cec11f5862a60a1a74b6ef82d1e3141f657db164736f6c63430008070033",
+							"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xF JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x3F DUP1 PUSH1 0x1D PUSH1 0x0 CODECOPY PUSH1 0x0 RETURN INVALID PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0xA6 0xD1 DUP7 0xBA CODESIZE 0xE3 SHL DUP7 SWAP14 GT SSTORE SWAP9 PC 0xCE 0xC1 0x1F PC PUSH3 0xA60A1A PUSH21 0xB6EF82D1E3141F657DB164736F6C63430008070033 ",
+							"sourceMap": "72:1751:0:-:0;;;;;;;;;;;;;;;;;;;"
+						},
+						"deployedBytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"immutableReferences": {},
+							"linkReferences": {},
+							"object": "6080604052600080fdfea2646970667358221220a6d186ba38e31b869d11559858cec11f5862a60a1a74b6ef82d1e3141f657db164736f6c63430008070033",
+							"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0xA6 0xD1 DUP7 0xBA CODESIZE 0xE3 SHL DUP7 SWAP14 GT SSTORE SWAP9 PC 0xCE 0xC1 0x1F PC PUSH3 0xA60A1A PUSH21 0xB6EF82D1E3141F657DB164736F6C63430008070033 ",
+							"sourceMap": "72:1751:0:-:0;;;;;"
+						},
+						"gasEstimates": {
+							"creation": {
+								"codeDepositCost": "12600",
+								"executionCost": "66",
+								"totalCost": "12666"
+							}
+						},
+						"legacyAssembly": {
+							".code": [
+								{
+									"begin": 72,
+									"end": 1823,
+									"name": "PUSH",
+									"source": 0,
+									"value": "80"
+								},
+								{
+									"begin": 72,
+									"end": 1823,
+									"name": "PUSH",
+									"source": 0,
+									"value": "40"
+								},
+								{
+									"begin": 72,
+									"end": 1823,
+									"name": "MSTORE",
+									"source": 0
+								},
+								{
+									"begin": 72,
+									"end": 1823,
+									"name": "CALLVALUE",
+									"source": 0
+								},
+								{
+									"begin": 72,
+									"end": 1823,
+									"name": "DUP1",
+									"source": 0
+								},
+								{
+									"begin": 72,
+									"end": 1823,
+									"name": "ISZERO",
+									"source": 0
+								},
+								{
+									"begin": 72,
+									"end": 1823,
+									"name": "PUSH [tag]",
+									"source": 0,
+									"value": "1"
+								},
+								{
+									"begin": 72,
+									"end": 1823,
+									"name": "JUMPI",
+									"source": 0
+								},
+								{
+									"begin": 72,
+									"end": 1823,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 72,
+									"end": 1823,
+									"name": "DUP1",
+									"source": 0
+								},
+								{
+									"begin": 72,
+									"end": 1823,
+									"name": "REVERT",
+									"source": 0
+								},
+								{
+									"begin": 72,
+									"end": 1823,
+									"name": "tag",
+									"source": 0,
+									"value": "1"
+								},
+								{
+									"begin": 72,
+									"end": 1823,
+									"name": "JUMPDEST",
+									"source": 0
+								},
+								{
+									"begin": 72,
+									"end": 1823,
+									"name": "POP",
+									"source": 0
+								},
+								{
+									"begin": 72,
+									"end": 1823,
+									"name": "PUSH #[$]",
+									"source": 0,
+									"value": "0000000000000000000000000000000000000000000000000000000000000000"
+								},
+								{
+									"begin": 72,
+									"end": 1823,
+									"name": "DUP1",
+									"source": 0
+								},
+								{
+									"begin": 72,
+									"end": 1823,
+									"name": "PUSH [$]",
+									"source": 0,
+									"value": "0000000000000000000000000000000000000000000000000000000000000000"
+								},
+								{
+									"begin": 72,
+									"end": 1823,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 72,
+									"end": 1823,
+									"name": "CODECOPY",
+									"source": 0
+								},
+								{
+									"begin": 72,
+									"end": 1823,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 72,
+									"end": 1823,
+									"name": "RETURN",
+									"source": 0
+								}
+							],
+							".data": {
+								"0": {
+									".auxdata": "a2646970667358221220a6d186ba38e31b869d11559858cec11f5862a60a1a74b6ef82d1e3141f657db164736f6c63430008070033",
+									".code": [
+										{
+											"begin": 72,
+											"end": 1823,
+											"name": "PUSH",
+											"source": 0,
+											"value": "80"
+										},
+										{
+											"begin": 72,
+											"end": 1823,
+											"name": "PUSH",
+											"source": 0,
+											"value": "40"
+										},
+										{
+											"begin": 72,
+											"end": 1823,
+											"name": "MSTORE",
+											"source": 0
+										},
+										{
+											"begin": 72,
+											"end": 1823,
+											"name": "PUSH",
+											"source": 0,
+											"value": "0"
+										},
+										{
+											"begin": 72,
+											"end": 1823,
+											"name": "DUP1",
+											"source": 0
+										},
+										{
+											"begin": 72,
+											"end": 1823,
+											"name": "REVERT",
+											"source": 0
+										}
+									]
+								}
+							}
+						},
+						"methodIdentifiers": {}
+					},
+					"metadata": "{\"compiler\":{\"version\":\"0.8.7+commit.e28d00a7\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol\":\"structures\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol\":{\"keccak256\":\"0x791bda110f35ed28762edd842be497edf59247fdca6d1b48ff888ff56132889c\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://fe19bfee6ab8e5727bd0a94927628e48689559970c957a6da663d659fada79ca\",\"dweb:/ipfs/QmRBLFkV4zMdKNpZAxuFHdGp6Gd6S5xa9bHhDgmhwK5mLH\"]}},\"version\":1}",
+					"storageLayout": {
+						"storage": [
+							{
+								"astId": 28,
+								"contract": "Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol:structures",
+								"label": "structUser_",
+								"offset": 0,
+								"slot": "0",
+								"type": "t_mapping(t_address,t_struct(structUser)23_storage)"
+							},
+							{
+								"astId": 53,
+								"contract": "Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol:structures",
+								"label": "strucApplications_",
+								"offset": 0,
+								"slot": "1",
+								"type": "t_mapping(t_address,t_struct(structApplication)48_storage)"
+							}
+						],
+						"types": {
+							"t_address": {
+								"encoding": "inplace",
+								"label": "address",
+								"numberOfBytes": "20"
+							},
+							"t_bool": {
+								"encoding": "inplace",
+								"label": "bool",
+								"numberOfBytes": "1"
+							},
+							"t_bytes32": {
+								"encoding": "inplace",
+								"label": "bytes32",
+								"numberOfBytes": "32"
+							},
+							"t_enum(Role)7": {
+								"encoding": "inplace",
+								"label": "enum structures.Role",
+								"numberOfBytes": "1"
+							},
+							"t_mapping(t_address,t_struct(structApplication)48_storage)": {
+								"encoding": "mapping",
+								"key": "t_address",
+								"label": "mapping(address => struct structures.structApplication)",
+								"numberOfBytes": "32",
+								"value": "t_struct(structApplication)48_storage"
+							},
+							"t_mapping(t_address,t_struct(structUser)23_storage)": {
+								"encoding": "mapping",
+								"key": "t_address",
+								"label": "mapping(address => struct structures.structUser)",
+								"numberOfBytes": "32",
+								"value": "t_struct(structUser)23_storage"
+							},
+							"t_string_storage": {
+								"encoding": "bytes",
+								"label": "string",
+								"numberOfBytes": "32"
+							},
+							"t_struct(structApplication)48_storage": {
+								"encoding": "inplace",
+								"label": "struct structures.structApplication",
+								"members": [
+									{
+										"astId": 37,
+										"contract": "Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol:structures",
+										"label": "name",
+										"offset": 0,
+										"slot": "0",
+										"type": "t_string_storage"
+									},
+									{
+										"astId": 39,
+										"contract": "Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol:structures",
+										"label": "contactForCommunication",
+										"offset": 0,
+										"slot": "1",
+										"type": "t_string_storage"
+									},
+									{
+										"astId": 41,
+										"contract": "Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol:structures",
+										"label": "userAdr",
+										"offset": 0,
+										"slot": "2",
+										"type": "t_address"
+									},
+									{
+										"astId": 43,
+										"contract": "Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol:structures",
+										"label": "status",
+										"offset": 20,
+										"slot": "2",
+										"type": "t_bool"
+									},
+									{
+										"astId": 45,
+										"contract": "Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol:structures",
+										"label": "reviewed",
+										"offset": 21,
+										"slot": "2",
+										"type": "t_bool"
+									},
+									{
+										"astId": 47,
+										"contract": "Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol:structures",
+										"label": "exist",
+										"offset": 22,
+										"slot": "2",
+										"type": "t_bool"
+									}
+								],
+								"numberOfBytes": "96"
+							},
+							"t_struct(structUser)23_storage": {
+								"encoding": "inplace",
+								"label": "struct structures.structUser",
+								"members": [
+									{
+										"astId": 10,
+										"contract": "Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol:structures",
+										"label": "role",
+										"offset": 0,
+										"slot": "0",
+										"type": "t_enum(Role)7"
+									},
+									{
+										"astId": 12,
+										"contract": "Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol:structures",
+										"label": "login",
+										"offset": 0,
+										"slot": "1",
+										"type": "t_string_storage"
+									},
+									{
+										"astId": 14,
+										"contract": "Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol:structures",
+										"label": "password",
+										"offset": 0,
+										"slot": "2",
+										"type": "t_bytes32"
+									},
+									{
+										"astId": 16,
+										"contract": "Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol:structures",
+										"label": "balance_overall",
+										"offset": 0,
+										"slot": "3",
+										"type": "t_uint256"
+									},
+									{
+										"astId": 18,
+										"contract": "Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol:structures",
+										"label": "balance_seed",
+										"offset": 0,
+										"slot": "4",
+										"type": "t_uint256"
+									},
+									{
+										"astId": 20,
+										"contract": "Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol:structures",
+										"label": "balance_private",
+										"offset": 0,
+										"slot": "5",
+										"type": "t_uint256"
+									},
+									{
+										"astId": 22,
+										"contract": "Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol:structures",
+										"label": "balance_public",
+										"offset": 0,
+										"slot": "6",
+										"type": "t_uint256"
+									}
+								],
+								"numberOfBytes": "224"
+							},
+							"t_uint256": {
+								"encoding": "inplace",
+								"label": "uint256",
+								"numberOfBytes": "32"
+							}
+						}
+					},
+					"userdoc": {
+						"kind": "user",
+						"methods": {},
+						"version": 1
+					}
+				}
+			}
+		},
+		"sources": {
+			"Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol": {
+				"ast": {
+					"absolutePath": "Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol",
+					"exportedSymbols": {
+						"structures": [
+							54
+						]
+					},
+					"id": 55,
+					"license": "GPL-3.0",
+					"nodeType": "SourceUnit",
+					"nodes": [
+						{
+							"id": 1,
+							"literals": [
+								"solidity",
+								">=",
+								"0.7",
+								".0",
+								"<",
+								"0.9",
+								".0"
+							],
+							"nodeType": "PragmaDirective",
+							"src": "37:31:0"
+						},
+						{
+							"abstract": false,
+							"baseContracts": [],
+							"contractDependencies": [],
+							"contractKind": "contract",
+							"fullyImplemented": true,
+							"id": 54,
+							"linearizedBaseContracts": [
+								54
+							],
+							"name": "structures",
+							"nameLocation": "81:10:0",
+							"nodeType": "ContractDefinition",
+							"nodes": [
+								{
+									"canonicalName": "structures.Role",
+									"id": 7,
+									"members": [
+										{
+											"id": 2,
+											"name": "SYSTEM_OWNER",
+											"nameLocation": "200:12:0",
+											"nodeType": "EnumValue",
+											"src": "200:12:0"
+										},
+										{
+											"id": 3,
+											"name": "SYSTEM_PUBLIC",
+											"nameLocation": "223:13:0",
+											"nodeType": "EnumValue",
+											"src": "223:13:0"
+										},
+										{
+											"id": 4,
+											"name": "SYSTEM_PRIVATE",
+											"nameLocation": "247:14:0",
+											"nodeType": "EnumValue",
+											"src": "247:14:0"
+										},
+										{
+											"id": 5,
+											"name": "INVESTOR",
+											"nameLocation": "272:8:0",
+											"nodeType": "EnumValue",
+											"src": "272:8:0"
+										},
+										{
+											"id": 6,
+											"name": "USER",
+											"nameLocation": "291:4:0",
+											"nodeType": "EnumValue",
+											"src": "291:4:0"
+										}
+									],
+									"name": "Role",
+									"nameLocation": "184:4:0",
+									"nodeType": "EnumDefinition",
+									"src": "179:123:0"
+								},
+								{
+									"canonicalName": "structures.structUser",
+									"id": 23,
+									"members": [
+										{
+											"constant": false,
+											"id": 10,
+											"mutability": "mutable",
+											"name": "role",
+											"nameLocation": "416:4:0",
+											"nodeType": "VariableDeclaration",
+											"scope": 23,
+											"src": "411:9:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_enum$_Role_$7",
+												"typeString": "enum structures.Role"
+											},
+											"typeName": {
+												"id": 9,
+												"nodeType": "UserDefinedTypeName",
+												"pathNode": {
+													"id": 8,
+													"name": "Role",
+													"nodeType": "IdentifierPath",
+													"referencedDeclaration": 7,
+													"src": "411:4:0"
+												},
+												"referencedDeclaration": 7,
+												"src": "411:4:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_enum$_Role_$7",
+													"typeString": "enum structures.Role"
+												}
+											},
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 12,
+											"mutability": "mutable",
+											"name": "login",
+											"nameLocation": "466:5:0",
+											"nodeType": "VariableDeclaration",
+											"scope": 23,
+											"src": "459:12:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_string_storage_ptr",
+												"typeString": "string"
+											},
+											"typeName": {
+												"id": 11,
+												"name": "string",
+												"nodeType": "ElementaryTypeName",
+												"src": "459:6:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_string_storage_ptr",
+													"typeString": "string"
+												}
+											},
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 14,
+											"mutability": "mutable",
+											"name": "password",
+											"nameLocation": "515:8:0",
+											"nodeType": "VariableDeclaration",
+											"scope": 23,
+											"src": "507:16:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_bytes32",
+												"typeString": "bytes32"
+											},
+											"typeName": {
+												"id": 13,
+												"name": "bytes32",
+												"nodeType": "ElementaryTypeName",
+												"src": "507:7:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_bytes32",
+													"typeString": "bytes32"
+												}
+											},
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 16,
+											"mutability": "mutable",
+											"name": "balance_overall",
+											"nameLocation": "565:15:0",
+											"nodeType": "VariableDeclaration",
+											"scope": 23,
+											"src": "557:23:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_uint256",
+												"typeString": "uint256"
+											},
+											"typeName": {
+												"id": 15,
+												"name": "uint256",
+												"nodeType": "ElementaryTypeName",
+												"src": "557:7:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												}
+											},
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 18,
+											"mutability": "mutable",
+											"name": "balance_seed",
+											"nameLocation": "626:12:0",
+											"nodeType": "VariableDeclaration",
+											"scope": 23,
+											"src": "618:20:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_uint256",
+												"typeString": "uint256"
+											},
+											"typeName": {
+												"id": 17,
+												"name": "uint256",
+												"nodeType": "ElementaryTypeName",
+												"src": "618:7:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												}
+											},
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 20,
+											"mutability": "mutable",
+											"name": "balance_private",
+											"nameLocation": "696:15:0",
+											"nodeType": "VariableDeclaration",
+											"scope": 23,
+											"src": "688:23:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_uint256",
+												"typeString": "uint256"
+											},
+											"typeName": {
+												"id": 19,
+												"name": "uint256",
+												"nodeType": "ElementaryTypeName",
+												"src": "688:7:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												}
+											},
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 22,
+											"mutability": "mutable",
+											"name": "balance_public",
+											"nameLocation": "769:14:0",
+											"nodeType": "VariableDeclaration",
+											"scope": 23,
+											"src": "761:22:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_uint256",
+												"typeString": "uint256"
+											},
+											"typeName": {
+												"id": 21,
+												"name": "uint256",
+												"nodeType": "ElementaryTypeName",
+												"src": "761:7:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												}
+											},
+											"visibility": "internal"
+										}
+									],
+									"name": "structUser",
+									"nameLocation": "389:10:0",
+									"nodeType": "StructDefinition",
+									"scope": 54,
+									"src": "382:448:0",
+									"visibility": "public"
+								},
+								{
+									"constant": false,
+									"id": 28,
+									"mutability": "mutable",
+									"name": "structUser_",
+									"nameLocation": "868:11:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 54,
+									"src": "836:43:0",
+									"stateVariable": true,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_mapping$_t_address_$_t_struct$_structUser_$23_storage_$",
+										"typeString": "mapping(address => struct structures.structUser)"
+									},
+									"typeName": {
+										"id": 27,
+										"keyType": {
+											"id": 24,
+											"name": "address",
+											"nodeType": "ElementaryTypeName",
+											"src": "845:7:0",
+											"typeDescriptions": {
+												"typeIdentifier": "t_address",
+												"typeString": "address"
+											}
+										},
+										"nodeType": "Mapping",
+										"src": "836:31:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_mapping$_t_address_$_t_struct$_structUser_$23_storage_$",
+											"typeString": "mapping(address => struct structures.structUser)"
+										},
+										"valueType": {
+											"id": 26,
+											"nodeType": "UserDefinedTypeName",
+											"pathNode": {
+												"id": 25,
+												"name": "structUser",
+												"nodeType": "IdentifierPath",
+												"referencedDeclaration": 23,
+												"src": "856:10:0"
+											},
+											"referencedDeclaration": 23,
+											"src": "856:10:0",
+											"typeDescriptions": {
+												"typeIdentifier": "t_struct$_structUser_$23_storage_ptr",
+												"typeString": "struct structures.structUser"
+											}
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"canonicalName": "structures.structPhase",
+									"id": 35,
+									"members": [
+										{
+											"constant": false,
+											"id": 30,
+											"mutability": "mutable",
+											"name": "statusSeed",
+											"nameLocation": "1040:10:0",
+											"nodeType": "VariableDeclaration",
+											"scope": 35,
+											"src": "1035:15:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_bool",
+												"typeString": "bool"
+											},
+											"typeName": {
+												"id": 29,
+												"name": "bool",
+												"nodeType": "ElementaryTypeName",
+												"src": "1035:4:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_bool",
+													"typeString": "bool"
+												}
+											},
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 32,
+											"mutability": "mutable",
+											"name": "statusPrivate",
+											"nameLocation": "1066:13:0",
+											"nodeType": "VariableDeclaration",
+											"scope": 35,
+											"src": "1061:18:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_bool",
+												"typeString": "bool"
+											},
+											"typeName": {
+												"id": 31,
+												"name": "bool",
+												"nodeType": "ElementaryTypeName",
+												"src": "1061:4:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_bool",
+													"typeString": "bool"
+												}
+											},
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 34,
+											"mutability": "mutable",
+											"name": "statusPublic",
+											"nameLocation": "1095:12:0",
+											"nodeType": "VariableDeclaration",
+											"scope": 35,
+											"src": "1090:17:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_bool",
+												"typeString": "bool"
+											},
+											"typeName": {
+												"id": 33,
+												"name": "bool",
+												"nodeType": "ElementaryTypeName",
+												"src": "1090:4:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_bool",
+													"typeString": "bool"
+												}
+											},
+											"visibility": "internal"
+										}
+									],
+									"name": "structPhase",
+									"nameLocation": "1012:11:0",
+									"nodeType": "StructDefinition",
+									"scope": 54,
+									"src": "1005:110:0",
+									"visibility": "public"
+								},
+								{
+									"canonicalName": "structures.structApplication",
+									"id": 48,
+									"members": [
+										{
+											"constant": false,
+											"id": 37,
+											"mutability": "mutable",
+											"name": "name",
+											"nameLocation": "1250:4:0",
+											"nodeType": "VariableDeclaration",
+											"scope": 48,
+											"src": "1243:11:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_string_storage_ptr",
+												"typeString": "string"
+											},
+											"typeName": {
+												"id": 36,
+												"name": "string",
+												"nodeType": "ElementaryTypeName",
+												"src": "1243:6:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_string_storage_ptr",
+													"typeString": "string"
+												}
+											},
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 39,
+											"mutability": "mutable",
+											"name": "contactForCommunication",
+											"nameLocation": "1301:23:0",
+											"nodeType": "VariableDeclaration",
+											"scope": 48,
+											"src": "1294:30:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_string_storage_ptr",
+												"typeString": "string"
+											},
+											"typeName": {
+												"id": 38,
+												"name": "string",
+												"nodeType": "ElementaryTypeName",
+												"src": "1294:6:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_string_storage_ptr",
+													"typeString": "string"
+												}
+											},
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 41,
+											"mutability": "mutable",
+											"name": "userAdr",
+											"nameLocation": "1381:7:0",
+											"nodeType": "VariableDeclaration",
+											"scope": 48,
+											"src": "1373:15:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_address",
+												"typeString": "address"
+											},
+											"typeName": {
+												"id": 40,
+												"name": "address",
+												"nodeType": "ElementaryTypeName",
+												"src": "1373:7:0",
+												"stateMutability": "nonpayable",
+												"typeDescriptions": {
+													"typeIdentifier": "t_address",
+													"typeString": "address"
+												}
+											},
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 43,
+											"mutability": "mutable",
+											"name": "status",
+											"nameLocation": "1458:6:0",
+											"nodeType": "VariableDeclaration",
+											"scope": 48,
+											"src": "1453:11:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_bool",
+												"typeString": "bool"
+											},
+											"typeName": {
+												"id": 42,
+												"name": "bool",
+												"nodeType": "ElementaryTypeName",
+												"src": "1453:4:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_bool",
+													"typeString": "bool"
+												}
+											},
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 45,
+											"mutability": "mutable",
+											"name": "reviewed",
+											"nameLocation": "1528:8:0",
+											"nodeType": "VariableDeclaration",
+											"scope": 48,
+											"src": "1523:13:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_bool",
+												"typeString": "bool"
+											},
+											"typeName": {
+												"id": 44,
+												"name": "bool",
+												"nodeType": "ElementaryTypeName",
+												"src": "1523:4:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_bool",
+													"typeString": "bool"
+												}
+											},
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 47,
+											"mutability": "mutable",
+											"name": "exist",
+											"nameLocation": "1622:5:0",
+											"nodeType": "VariableDeclaration",
+											"scope": 48,
+											"src": "1617:10:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_bool",
+												"typeString": "bool"
+											},
+											"typeName": {
+												"id": 46,
+												"name": "bool",
+												"nodeType": "ElementaryTypeName",
+												"src": "1617:4:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_bool",
+													"typeString": "bool"
+												}
+											},
+											"visibility": "internal"
+										}
+									],
+									"name": "structApplication",
+									"nameLocation": "1214:17:0",
+									"nodeType": "StructDefinition",
+									"scope": 54,
+									"src": "1207:485:0",
+									"visibility": "public"
+								},
+								{
+									"constant": false,
+									"id": 53,
+									"mutability": "mutable",
+									"name": "strucApplications_",
+									"nameLocation": "1737:18:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 54,
+									"src": "1698:57:0",
+									"stateVariable": true,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_mapping$_t_address_$_t_struct$_structApplication_$48_storage_$",
+										"typeString": "mapping(address => struct structures.structApplication)"
+									},
+									"typeName": {
+										"id": 52,
+										"keyType": {
+											"id": 49,
+											"name": "address",
+											"nodeType": "ElementaryTypeName",
+											"src": "1707:7:0",
+											"typeDescriptions": {
+												"typeIdentifier": "t_address",
+												"typeString": "address"
+											}
+										},
+										"nodeType": "Mapping",
+										"src": "1698:38:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_mapping$_t_address_$_t_struct$_structApplication_$48_storage_$",
+											"typeString": "mapping(address => struct structures.structApplication)"
+										},
+										"valueType": {
+											"id": 51,
+											"nodeType": "UserDefinedTypeName",
+											"pathNode": {
+												"id": 50,
+												"name": "structApplication",
+												"nodeType": "IdentifierPath",
+												"referencedDeclaration": 48,
+												"src": "1718:17:0"
+											},
+											"referencedDeclaration": 48,
+											"src": "1718:17:0",
+											"typeDescriptions": {
+												"typeIdentifier": "t_struct$_structApplication_$48_storage_ptr",
+												"typeString": "struct structures.structApplication"
+											}
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"scope": 55,
+							"src": "72:1751:0",
+							"usedErrors": []
+						}
+					],
+					"src": "37:1786:0"
+				},
+				"id": 0
+			}
+		}
+	}
+}
