@@ -40,4 +40,7 @@ contract structures {
         bool exist;                     // заявка существует
     }
     mapping (address => structApplication) strucApplications_; // обращение к структуре по АДРЕСАМ
+    address[] structApplicationsAmountAdr;                     // массив пользователей, подавших заявление
+    address[] whiteList;                                       // белый лист прользователей, которым одобрили заявки
+    address[] blackList;                                       // черный лист полльзователей
 }

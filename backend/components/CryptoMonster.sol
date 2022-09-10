@@ -6,11 +6,11 @@ import "../shared/lib/SafeMath.sol";     // библиотека безопас�
 import "../shared/lib/IERC20.sol";       // стандарт IERC20
 
 // COMPONENT
-import "./main.sol";
+import "../shared/helpers/modifireFunc.sol";
 import "./PhaseSeed.sol";
 import "./PhasePrivate.sol";
 
-contract CryptoMonster is IERC20, Main, PhaseSeed, PhasePrivate {
+contract CryptoMonster is IERC20, modifireFunc, PhaseSeed, PhasePrivate {
     using SafeMath for uint256; // библиотека безопасных вычислений
 
     // COMMENT: Общие сведения по токену.
@@ -40,9 +40,9 @@ contract CryptoMonster is IERC20, Main, PhaseSeed, PhasePrivate {
         structPhases_[publicProviderAdr].statusPhase = false;                                                                      // присвоение статуса фазы
 
         // COMMENT: Перечесление средств инвесторам.
-        // transfer(investorFirstAdr, 600000);  // Investor1
-        // transfer(investorSecondAdr, 800000); // Investor2
-        // transfer(bestFriendAdr, 400000);     // Best friend
+        transfer(investorFirstAdr, 600000);  // Investor1
+        transfer(investorSecondAdr, 800000); // Investor2
+        transfer(bestFriendAdr, 400000);     // Best friend
     }
 
     // COMMENT_FUNC: Функция покупки токена
@@ -80,7 +80,6 @@ contract CryptoMonster is IERC20, Main, PhaseSeed, PhasePrivate {
         if (validatePhase("seed", privateProviderAdr, publicProviderAdr) == true)  {                             // !: if фаза SEED
             if (validateOwner() == true) {                                                                         // !: if пользователь админ
                 require(_numTokens <= structUsers_[msg.sender].balance_overall);                                     // !: проверка на переполнение баланса владельца
-                require (structUsers_[msg.sender].role == Role.INVESTOR, "Your not investor");                       // !: проверка того, что msg.sender является инвестором
                 require (structUsers_[_receiver].role == Role.INVESTOR, "Your not investor");                        // !: проверка того, что msg.sender является инвестором
 
                 structUsers_[msg.sender].balance_overall = structUsers_[msg.sender].balance_overall.sub(_numTokens); // ?: снятие токенов с баланса владельца

@@ -69,12 +69,25 @@
 			{
 				"inputs": [
 					{
-						"internalType": "bool",
-						"name": "_changeStatus",
-						"type": "bool"
+						"internalType": "address",
+						"name": "_userAdr",
+						"type": "address"
 					}
 				],
 				"name": "acceptApplication",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_userAdr",
+						"type": "address"
+					}
+				],
+				"name": "addBlackList",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -190,6 +203,45 @@
 						"internalType": "uint8",
 						"name": "",
 						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_userAdr",
+						"type": "address"
+					}
+				],
+				"name": "deviationApplication",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getApplicationAmountAdr",
+				"outputs": [
+					{
+						"internalType": "address[]",
+						"name": "",
+						"type": "address[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getApplicationNotReviewed",
+				"outputs": [
+					{
+						"internalType": "address[]",
+						"name": "",
+						"type": "address[]"
 					}
 				],
 				"stateMutability": "view",
@@ -318,6 +370,57 @@
 				],
 				"stateMutability": "nonpayable",
 				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_userAdr",
+						"type": "address"
+					}
+				],
+				"name": "viewApplication",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "contactForCommunication",
+								"type": "string"
+							},
+							{
+								"internalType": "address",
+								"name": "userAdr",
+								"type": "address"
+							},
+							{
+								"internalType": "bool",
+								"name": "status",
+								"type": "bool"
+							},
+							{
+								"internalType": "bool",
+								"name": "reviewed",
+								"type": "bool"
+							},
+							{
+								"internalType": "bool",
+								"name": "exist",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct structures.structApplication",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -348,51 +451,51 @@
 	},
 	"sources": {
 		"Documents/GitHub/contract-token-cryptoMonster/backend/components/CryptoMonster.sol": {
-			"keccak256": "0x7200a6f4e2e7839a34e7e972bedbcfed29784dc00e46097a2e8e53cfb5ef26ac",
+			"keccak256": "0x0b661e42401f05f76eb9559704675038f48c920c1523750c61b547e8bc1accba",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://f574ca2ccb8af4f8ac6978b26de84c8e2a18ac86d416717120d363fabe71ba5f",
-				"dweb:/ipfs/QmWv7AaFBptQC9B8yfRjYvRWCosSpzLXoWx5uxoPyKPYch"
+				"bzz-raw://da9091082b2965eb068ec7da8372917211fb4153b75c30e9a37581f9b1113f11",
+				"dweb:/ipfs/QmNcuxMcecCVwEbH4sEY5eSARtYDJszar1QxK3kaPCBZyp"
 			]
 		},
 		"Documents/GitHub/contract-token-cryptoMonster/backend/components/PhasePrivate.sol": {
-			"keccak256": "0xb10734f833c3608bfda9ce0ef122b8af6de2f149160f414e1fde8251a265a84b",
+			"keccak256": "0x3fa7d5df4b5513910d0c0cbfdf2ef0e11ab85d198cff8b720e5cb812aeccb877",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://4f6203e623b16f8e532651e491d1567978631fb56c8e47d528e5b322cbfbb949",
-				"dweb:/ipfs/Qmbr3eg2r5anpdi18SZGcwHWkHsuFWaLSkPJf16rEUFEpj"
+				"bzz-raw://6580eb214f1a3463c2c2a1ff83f165cec267ff33c98319b43bdcb918d8b75021",
+				"dweb:/ipfs/Qmd9ygARFBafHbs4tdYhQatPkaUd8UDEMEGTQ9wtm2Xi3n"
 			]
 		},
 		"Documents/GitHub/contract-token-cryptoMonster/backend/components/PhaseSeed.sol": {
-			"keccak256": "0x7eb7196e1b7b443e24557c7b762c5dae41c3a19237ce772fbba576a18ad0aaaa",
+			"keccak256": "0x5752154f7ba2072c7fd261c4ccd8af9b725f9ff658abee45acddcecdba1de21f",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://8eec3fa265e4675e9e786dbbd60d81f54073a71b3d7c166d8c2aaba5053fe0a9",
-				"dweb:/ipfs/QmNWrixnhZwE74CxqxRvG23A71nWd5i1jm8Gub2H36Y1hx"
+				"bzz-raw://e52f133ab537abbf436f7071f1d1db5116d9b7dd09525074dafa7325c8a25e89",
+				"dweb:/ipfs/QmdLG3sXhsa4ioYSBSxeEs93BZConUbusoh23UKEUNCG19"
 			]
 		},
-		"Documents/GitHub/contract-token-cryptoMonster/backend/components/main.sol": {
-			"keccak256": "0x2b6f90db3286bd0b5474121cbe4494f8cf0d80a91fbc07d0c1285f7059dad479",
+		"Documents/GitHub/contract-token-cryptoMonster/backend/shared/helpers/helpresFunc.sol": {
+			"keccak256": "0xa2b4e32804d8a3400328f2c6e8fade75d1f79d37dade6bd3e3ccb8e05d0be284",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://a27fdbd0670496dcb4858537f21665266b3d6e9d850d9eee9698f8801aa8990c",
-				"dweb:/ipfs/QmNSUsQQrBfNEAeeuNuVfYFu2U4TTKDHx6283eTUJbMsLu"
+				"bzz-raw://42bc1e8bd74a4add88eef975f3a6fe302aa76aa50c7ae14887558438345a2ea2",
+				"dweb:/ipfs/QmcZVFppyn7Sb6qA4eV9AM8T4341Fp8HV8W4S5fMh3GMSb"
 			]
 		},
-		"Documents/GitHub/contract-token-cryptoMonster/backend/shared/helpers/getFuncs.sol": {
-			"keccak256": "0x55073c985c0ace969bfd71eedd56019c7349e65b5ece564d2a0518810e901c81",
+		"Documents/GitHub/contract-token-cryptoMonster/backend/shared/helpers/modifireFunc.sol": {
+			"keccak256": "0x83cecd5dc565ea178fc56df2f48fea13cecfc61db0871e92a3ecbb0f50dcf7ea",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://b29b6d3e009cfcd406945988b1338f5512656f14a49fc8d8825024e81de023fe",
-				"dweb:/ipfs/QmVDcL7SM8t2R5ZAAGNFJhAUHvJQEX2wRrKihVWHiNLma2"
+				"bzz-raw://1e0d3b58253d67c30cc3703349767975458b4dbaff9f4970a0340e3815ba83d9",
+				"dweb:/ipfs/QmYBiLimH6THida4kSNgsGWKhMngh7EdGh1RnoMah9PRaf"
 			]
 		},
 		"Documents/GitHub/contract-token-cryptoMonster/backend/shared/helpers/validateFuncs.sol": {
-			"keccak256": "0x55a8643a4e2500eea6f59f7e7f566793931fec76dcb865f101a6f7bd99b6f503",
+			"keccak256": "0x0c17187afe3169c9183bf48e72a0e1aa1cbedd5116f62ba346c53d144394c0ea",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://bb96275c62c97e4259aa8c07867efff9a59d8968a2c668f84e597efba46b9252",
-				"dweb:/ipfs/QmPEDXJmNEX1skQRrvGdWtzsguaiW1MkGH3b3xnfoBZ3vG"
+				"bzz-raw://8c82d787a6b6e1c4a6b7fec1824f58eb4baa96aea9c535264d8c86642c8e5a35",
+				"dweb:/ipfs/QmV9k6EEdRULuUs9Bke1U5fM99BS4xJxBge5i3CypSFNNc"
 			]
 		},
 		"Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/IERC20.sol": {
@@ -412,11 +515,11 @@
 			]
 		},
 		"Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol": {
-			"keccak256": "0x3c4d55fff6547a670227273cabf6e5cd6279729590c2415e26148beed5975392",
+			"keccak256": "0xca184d7adbbe19d6a20e62cddc74ada2857bfea6a3e47738364cf1f40928dbfa",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://31dfe220e5e8f93ca63e6021e3fdf2115f3672410395d5ba5cceb197c48e921f",
-				"dweb:/ipfs/QmcMwAuz3HM2QT4HWoHUxny2HqbtibVdu3gDwkeEs9Xyn7"
+				"bzz-raw://9092664380761a6bde2606c20b60fda42fb4f694cd0b8eb47fdd572dc0f5ddb3",
+				"dweb:/ipfs/QmPhpmEW6Mnfik6AcFQ7iZujMtyaDu8NEQdkoj5EXSnWS2"
 			]
 		}
 	},

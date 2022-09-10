@@ -2,10 +2,10 @@
 pragma solidity >=0.7.0 <0.9.0;
 
 import "../lib/structures.sol";
-import "./getFuncs.sol";              // шаблон структур
+import "./helpresFunc.sol";              // шаблон структур
 
 // COMMENT: Контракт хранит в себе функции проверка.
-contract validateFuncs is structures, getFuncs {
+contract validateFuncs is structures, helpresFunc {
 
     //COMMENT_FUNC: Функция проверки роли владельца.
     function validateOwner() internal view returns (bool) {
@@ -17,7 +17,7 @@ contract validateFuncs is structures, getFuncs {
     //COMMIT_FUNC: Функция проверка стадии SEED
     function validatePhase(string memory _type, address _providerPrivate, address _providerPublic) internal view returns (bool) {
         if (get_keccak256(_type) == get_keccak256("seed")) {
-            if (structPhases_[_providerPrivate].statusPhase == false && structPhases_[_providerPublic].statusPhase == false ) 
+            if (structPhases_[_providerPrivate].statusPhase == false && structPhases_[_providerPublic].statusPhase == false) 
             return true;  // ?: if условие удовлетворено
             return false; // ?: if условие не удовлетворяет
         } else if (get_keccak256(_type) == get_keccak256("private")) {
