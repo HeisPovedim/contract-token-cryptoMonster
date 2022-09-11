@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: GPL-3.0
 pragma solidity >=0.7.0 <0.9.0;
 
-import "../shared/helpers/modifireFunc.sol";
+import "../shared/helpers/validateFuncs.sol";
 
 // @: Конструкция SEED раунда.
-contract PhaseSeed is modifireFunc {
+contract PhaseSeed is validateFuncs {
     address investorFirstAdr = 0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB;  // Investor1
     address investorSecondAdr = 0x617F2E2fD72FD9D5503197092aC168c91465E7f2; // Investor2
     address bestFriendAdr = 0x17F6AD8Ef982297579C203069C1DbfFE4348c372;     // Best friend

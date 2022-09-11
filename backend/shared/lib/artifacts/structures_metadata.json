@@ -18,7 +18,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol": "structures"
+			"GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol": "structures"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -32,7 +32,7 @@
 		"remappings": []
 	},
 	"sources": {
-		"Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol": {
+		"GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol": {
 			"keccak256": "0xca184d7adbbe19d6a20e62cddc74ada2857bfea6a3e47738364cf1f40928dbfa",
 			"license": "GPL-3.0",
 			"urls": [

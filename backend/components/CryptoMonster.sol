@@ -6,11 +6,11 @@ import "../shared/lib/SafeMath.sol";     // библиотека безопас�
 import "../shared/lib/IERC20.sol";       // стандарт IERC20
 
 // COMPONENT
-import "../shared/helpers/modifireFunc.sol";
+import "../shared/helpers/validateFuncs.sol";
 import "./PhaseSeed.sol";
 import "./PhasePrivate.sol";
 
-contract CryptoMonster is IERC20, modifireFunc, PhaseSeed, PhasePrivate {
+contract CryptoMonster is IERC20, validateFuncs, PhaseSeed, PhasePrivate {
     using SafeMath for uint256; // библиотека безопасных вычислений
 
     // COMMENT: Общие сведения по токену.
@@ -26,7 +26,7 @@ contract CryptoMonster is IERC20, modifireFunc, PhaseSeed, PhasePrivate {
     // COMMENT: Набор начальных системных пользователей.
     address constant ownerAdr = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4;           // ВЛАДЕЛЕЦ
     address constant privateProviderAdr = 0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2; // PRIVATE ПРОВАЙДЕР
-    address constant publicProviderAdr = 0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2;  // PUBLIC ПРОВАЙДЕР
+    address constant publicProviderAdr = 0x4B20993Bc481177ec7E8f571ceCaE8A9e22C02db;  // PUBLIC ПРОВАЙДЕР
 
     constructor(uint256 total) {
         totalSupply_ = total; // кол-во токенов при старте
@@ -64,11 +64,13 @@ contract CryptoMonster is IERC20, modifireFunc, PhaseSeed, PhasePrivate {
 
     // COMMENT_FUNC: Функция вернет текущий баланс токена учетной записи, идентифицированный по адресу его владельца.
     function balanceOf(address _tokenOwner) public override view returns (uint256) {
-        if(structPhases_[privateProviderAdr].statusPhase == false && structPhases_[publicProviderAdr].statusPhase == false) { // !: if фаза SEED
+        if (validateOwner() == true) {                                                                                               // !: if пользователь админ
+            return structUsers_[_tokenOwner].balance_overall;
+        } else if(structPhases_[privateProviderAdr].statusPhase == false && structPhases_[publicProviderAdr].statusPhase == false) { // !: if фаза SEED
             return structUsers_[_tokenOwner].balance_seed;
-        } else if (structPhases_[privateProviderAdr].statusPhase == true) {                                                   // !: if фаза PRIVATE
+        } else if (structPhases_[privateProviderAdr].statusPhase == true) {                                                          // !: if фаза PRIVATE
             return structUsers_[_tokenOwner].balance_private;
-        } else if (structPhases_[publicProviderAdr].statusPhase == true) {                                                    // !: if фаза PUBLIC
+        } else if (structPhases_[publicProviderAdr].statusPhase == true) {                                                           // !: if фаза PUBLIC
             return structUsers_[_tokenOwner].balance_public;
         } else return 0;
     }
@@ -134,10 +136,10 @@ contract CryptoMonster is IERC20, modifireFunc, PhaseSeed, PhasePrivate {
     // COMMENT_FUNC: Функция TransferFrom является аналогом функции утверждения. Это позволяет делегату,
     // одобренному для снятия средств, переводить средства владельца на сторонний счет.
     function transferFrom(address _owner, address _buyer, uint256 _numTokens) public override returns (bool) {
-        if (validatePhase("seed", privateProviderAdr, publicProviderAdr) == true)  {                   // !: if фаза SEED
-            if (validateOwner() == true) {                                                             // !: if пользователь является ownder'ом
-                require(_numTokens <= structUsers_[_owner].balance_overall);                           // ?: проверка баланса
-                require(_numTokens <= allowed[_owner][msg.sender]);                                    // ?: проверка баланса
+        if (validatePhase("seed", privateProviderAdr, publicProviderAdr) == true)  { // !: if фаза SEED
+            if (validateOwner() == true) {                                           // !: if пользователь является ownder'ом
+                require(_numTokens <= structUsers_[_owner].balance_overall);         // ?: проверка баланса
+                require(_numTokens <= allowed[_owner][msg.sender]);                  // ?: проверка баланса
 
                 structUsers_[_owner].balance_seed = structUsers_[_owner].balance_seed.sub(_numTokens); // ?: снятие токенов с баланса
                 allowed[_owner][msg.sender] = allowed[_owner][msg.sender].sub(_numTokens);             // ?: снятие токенов с баланса
@@ -145,8 +147,8 @@ contract CryptoMonster is IERC20, modifireFunc, PhaseSeed, PhasePrivate {
                 emit Transfer(_owner, _buyer, _numTokens);
                 return true;
             } else {
-                require(_numTokens <= structUsers_[_owner].balance_seed);                              // ?: проверка баланса
-                require(_numTokens <= allowed[_owner][msg.sender]);                                    // ?: проверка баланса
+                require(_numTokens <= structUsers_[_owner].balance_seed); // ?: проверка баланса
+                require(_numTokens <= allowed[_owner][msg.sender]);       // ?: проверка баланса
 
                 structUsers_[_owner].balance_seed = structUsers_[_owner].balance_seed.sub(_numTokens); // ?: снятие токенов с баланса
                 allowed[_owner][msg.sender] = allowed[_owner][msg.sender].sub(_numTokens);             // ?: снятие токенов с баланса
@@ -155,9 +157,9 @@ contract CryptoMonster is IERC20, modifireFunc, PhaseSeed, PhasePrivate {
                 return true;
             }
         } else if (validatePhase("private", privateProviderAdr, publicProviderAdr) == true) {     
-            if (validateOwner() == true) {                                                             // !: if пользователь является ownder'ом
-                require(_numTokens <= structUsers_[_owner].balance_overall);                           // ?: проверка баланса
-                require(_numTokens <= allowed[_owner][msg.sender]);                                    // ?: проверка баланса
+            if (validateOwner() == true) {                                   // !: if пользователь является ownder'ом
+                require(_numTokens <= structUsers_[_owner].balance_overall); // ?: проверка баланса
+                require(_numTokens <= allowed[_owner][msg.sender]);          // ?: проверка баланса
 
                 structUsers_[_owner].balance_seed = structUsers_[_owner].balance_seed.sub(_numTokens); // ?: снятие токенов с баланса
                 allowed[_owner][msg.sender] = allowed[_owner][msg.sender].sub(_numTokens);             // ?: снятие токенов с баланса
@@ -165,19 +167,19 @@ contract CryptoMonster is IERC20, modifireFunc, PhaseSeed, PhasePrivate {
                 emit Transfer(_owner, _buyer, _numTokens);
                 return true;
             } else {
-                require(_numTokens <= structUsers_[_owner].balance_private);                              // ?: проверка баланса
-                require(_numTokens <= allowed[_owner][msg.sender]);                                    // ?: проверка баланса
+                require(_numTokens <= structUsers_[_owner].balance_private); // ?: проверка баланса
+                require(_numTokens <= allowed[_owner][msg.sender]);          // ?: проверка баланса
 
                 structUsers_[_owner].balance_private = structUsers_[_owner].balance_private.sub(_numTokens); // ?: снятие токенов с баланса
-                allowed[_owner][msg.sender] = allowed[_owner][msg.sender].sub(_numTokens);             // ?: снятие токенов с баланса
+                allowed[_owner][msg.sender] = allowed[_owner][msg.sender].sub(_numTokens);                   // ?: снятие токенов с баланса
                 structUsers_[_buyer].balance_private = structUsers_[_buyer].balance_private.add(_numTokens); // ?: начисление токенов на баланс
                 emit Transfer(_owner, _buyer, _numTokens);
                 return true;
             }
         } else if (validatePhase("public", privateProviderAdr, publicProviderAdr) == true) { 
-            if (validateOwner() == true) {                                                             // !: if пользователь является ownder'ом
-                require(_numTokens <= structUsers_[_owner].balance_overall);                           // ?: проверка баланса
-                require(_numTokens <= allowed[_owner][msg.sender]);                                    // ?: проверка баланса
+            if (validateOwner() == true) {                                   // !: if пользователь является ownder'ом
+                require(_numTokens <= structUsers_[_owner].balance_overall); // ?: проверка баланса
+                require(_numTokens <= allowed[_owner][msg.sender]);          // ?: проверка баланса
 
                 structUsers_[_owner].balance_seed = structUsers_[_owner].balance_seed.sub(_numTokens); // ?: снятие токенов с баланса
                 allowed[_owner][msg.sender] = allowed[_owner][msg.sender].sub(_numTokens);             // ?: снятие токенов с баланса
@@ -185,11 +187,11 @@ contract CryptoMonster is IERC20, modifireFunc, PhaseSeed, PhasePrivate {
                 emit Transfer(_owner, _buyer, _numTokens);
                 return true;
             } else {
-                require(_numTokens <= structUsers_[_owner].balance_public);                              // ?: проверка баланса
-                require(_numTokens <= allowed[_owner][msg.sender]);                                    // ?: проверка баланса
+                require(_numTokens <= structUsers_[_owner].balance_public); // ?: проверка баланса
+                require(_numTokens <= allowed[_owner][msg.sender]);         // ?: проверка баланса
 
                 structUsers_[_owner].balance_public = structUsers_[_owner].balance_public.sub(_numTokens); // ?: снятие токенов с баланса
-                allowed[_owner][msg.sender] = allowed[_owner][msg.sender].sub(_numTokens);             // ?: снятие токенов с баланса
+                allowed[_owner][msg.sender] = allowed[_owner][msg.sender].sub(_numTokens);                 // ?: снятие токенов с баланса
                 structUsers_[_buyer].balance_public = structUsers_[_buyer].balance_public.add(_numTokens); // ?: начисление токенов на баланс
                 emit Transfer(_owner, _buyer, _numTokens);
                 return true;
@@ -209,5 +211,10 @@ contract CryptoMonster is IERC20, modifireFunc, PhaseSeed, PhasePrivate {
     // конкретному делегату, как установлено в функции утверждения.
     function allowance(address _owner, address _delegate) public override view returns (uint) {
         return allowed[_owner][_delegate];
+    }
+
+    // COMMENT_FUNC: Функция добавления адреса в черный лист.
+    function addBlackList (address _userAdr) public onlyOwner {
+        blackList.push(_userAdr); // ?: Добавление пользователя в черный список
     }
 }

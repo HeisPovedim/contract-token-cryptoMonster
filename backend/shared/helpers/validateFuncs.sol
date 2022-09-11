@@ -1,11 +1,10 @@
 // SPDX-License-Identifier: GPL-3.0
 pragma solidity >=0.7.0 <0.9.0;
 
-import "../lib/structures.sol";
-import "./helpresFunc.sol";              // шаблон структур
+import "./helpresFunc.sol";
 
 // COMMENT: Контракт хранит в себе функции проверка.
-contract validateFuncs is structures, helpresFunc {
+contract validateFuncs is helpresFunc {
 
     //COMMENT_FUNC: Функция проверки роли владельца.
     function validateOwner() internal view returns (bool) {

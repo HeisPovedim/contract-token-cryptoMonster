@@ -21,19 +21,6 @@
 			{
 				"inputs": [
 					{
-						"internalType": "address",
-						"name": "_userAdr",
-						"type": "address"
-					}
-				],
-				"name": "addBlackList",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
 						"internalType": "string",
 						"name": "_name",
 						"type": "string"
@@ -94,6 +81,19 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "get_blackList",
+				"outputs": [
+					{
+						"internalType": "address[]",
+						"name": "",
+						"type": "address[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "string",
@@ -113,54 +113,16 @@
 				"type": "function"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "_userAdr",
-						"type": "address"
-					}
-				],
-				"name": "viewApplication",
+				"inputs": [],
+				"name": "get_whiteList",
 				"outputs": [
 					{
-						"components": [
-							{
-								"internalType": "string",
-								"name": "name",
-								"type": "string"
-							},
-							{
-								"internalType": "string",
-								"name": "contactForCommunication",
-								"type": "string"
-							},
-							{
-								"internalType": "address",
-								"name": "userAdr",
-								"type": "address"
-							},
-							{
-								"internalType": "bool",
-								"name": "status",
-								"type": "bool"
-							},
-							{
-								"internalType": "bool",
-								"name": "reviewed",
-								"type": "bool"
-							},
-							{
-								"internalType": "bool",
-								"name": "exist",
-								"type": "bool"
-							}
-						],
-						"internalType": "struct structures.structApplication",
+						"internalType": "address[]",
 						"name": "",
-						"type": "tuple"
+						"type": "address[]"
 					}
 				],
-				"stateMutability": "nonpayable",
+				"stateMutability": "view",
 				"type": "function"
 			}
 		],
@@ -177,7 +139,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"Documents/GitHub/contract-token-cryptoMonster/backend/components/PhasePrivate.sol": "PhasePrivate"
+			"GitHub/contract-token-cryptoMonster/backend/components/PhasePrivate.sol": "PhasePrivate"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -191,39 +153,39 @@
 		"remappings": []
 	},
 	"sources": {
-		"Documents/GitHub/contract-token-cryptoMonster/backend/components/PhasePrivate.sol": {
-			"keccak256": "0x3fa7d5df4b5513910d0c0cbfdf2ef0e11ab85d198cff8b720e5cb812aeccb877",
+		"GitHub/contract-token-cryptoMonster/backend/components/PhasePrivate.sol": {
+			"keccak256": "0xe076883d0946ba97d510d064d0e1fbe254abd6a46a4dd67f1df357535c1ac3d0",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://6580eb214f1a3463c2c2a1ff83f165cec267ff33c98319b43bdcb918d8b75021",
-				"dweb:/ipfs/Qmd9ygARFBafHbs4tdYhQatPkaUd8UDEMEGTQ9wtm2Xi3n"
+				"bzz-raw://4a89463663dbb84057fd7c8a112d88ef4c1ba971cc53c6d9952bba8843fa952f",
+				"dweb:/ipfs/QmVjQpqvqYBLxxdb4HmGs2QkmYu73dKkdWsHNePfUP5tze"
 			]
 		},
-		"Documents/GitHub/contract-token-cryptoMonster/backend/shared/helpers/helpresFunc.sol": {
-			"keccak256": "0xa2b4e32804d8a3400328f2c6e8fade75d1f79d37dade6bd3e3ccb8e05d0be284",
+		"GitHub/contract-token-cryptoMonster/backend/shared/helpers/helpresFunc.sol": {
+			"keccak256": "0x5de0f31b2c721f2187a80581aea750f33adc647d0ac199043ddf54200215fd29",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://42bc1e8bd74a4add88eef975f3a6fe302aa76aa50c7ae14887558438345a2ea2",
-				"dweb:/ipfs/QmcZVFppyn7Sb6qA4eV9AM8T4341Fp8HV8W4S5fMh3GMSb"
+				"bzz-raw://1519c07047610ed7596d29aadc2c66acbd641ace1275da8ac0fe7a7f0791f6c0",
+				"dweb:/ipfs/QmVsqyZdZTxPfwvSEYEeGr2kWtjSrvaVM4cjY8WPVUi9Ts"
 			]
 		},
-		"Documents/GitHub/contract-token-cryptoMonster/backend/shared/helpers/modifireFunc.sol": {
-			"keccak256": "0x83cecd5dc565ea178fc56df2f48fea13cecfc61db0871e92a3ecbb0f50dcf7ea",
+		"GitHub/contract-token-cryptoMonster/backend/shared/helpers/modifireFunc.sol": {
+			"keccak256": "0xb2df03f445a18d4482d9ed070d383d0bc4244102e78e394dde2d2d1b4b048cf0",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://1e0d3b58253d67c30cc3703349767975458b4dbaff9f4970a0340e3815ba83d9",
-				"dweb:/ipfs/QmYBiLimH6THida4kSNgsGWKhMngh7EdGh1RnoMah9PRaf"
+				"bzz-raw://3ed7bb10cf992ce488dff80656254a8152cbd128ccc5f3fc01a6d73d22aecacd",
+				"dweb:/ipfs/Qmbu7hgAqRHEBJVSvR5gYt3gNtKESANykaK6CXcoyUREXD"
 			]
 		},
-		"Documents/GitHub/contract-token-cryptoMonster/backend/shared/helpers/validateFuncs.sol": {
-			"keccak256": "0x0c17187afe3169c9183bf48e72a0e1aa1cbedd5116f62ba346c53d144394c0ea",
+		"GitHub/contract-token-cryptoMonster/backend/shared/helpers/validateFuncs.sol": {
+			"keccak256": "0xe5ae80761de92b045fc3aef1f2eecc230e54094b457520aed3187bf7292c6538",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://8c82d787a6b6e1c4a6b7fec1824f58eb4baa96aea9c535264d8c86642c8e5a35",
-				"dweb:/ipfs/QmV9k6EEdRULuUs9Bke1U5fM99BS4xJxBge5i3CypSFNNc"
+				"bzz-raw://79b619d03d75cb74c3adbe48c3baa3d7ff84b04fcf3f2d4865076672089b1624",
+				"dweb:/ipfs/QmcrfuRjB5gs2GzgDCH8ADkp26Lo6Bi8pqVdUjFu5o2c8h"
 			]
 		},
-		"Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol": {
+		"GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol": {
 			"keccak256": "0xca184d7adbbe19d6a20e62cddc74ada2857bfea6a3e47738364cf1f40928dbfa",
 			"license": "GPL-3.0",
 			"urls": [
