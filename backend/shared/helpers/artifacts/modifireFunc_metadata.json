@@ -18,7 +18,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"GitHub/contract-token-cryptoMonster/backend/shared/helpers/modifireFunc.sol": "modifireFunc"
+			"Documents/GitHub/contract-token-cryptoMonster/backend/shared/helpers/modifireFunc.sol": "modifireFunc"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -32,7 +32,7 @@
 		"remappings": []
 	},
 	"sources": {
-		"GitHub/contract-token-cryptoMonster/backend/shared/helpers/modifireFunc.sol": {
+		"Documents/GitHub/contract-token-cryptoMonster/backend/shared/helpers/modifireFunc.sol": {
 			"keccak256": "0xb2df03f445a18d4482d9ed070d383d0bc4244102e78e394dde2d2d1b4b048cf0",
 			"license": "GPL-3.0",
 			"urls": [
@@ -40,7 +40,7 @@
 				"dweb:/ipfs/Qmbu7hgAqRHEBJVSvR5gYt3gNtKESANykaK6CXcoyUREXD"
 			]
 		},
-		"GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol": {
+		"Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol": {
 			"keccak256": "0xca184d7adbbe19d6a20e62cddc74ada2857bfea6a3e47738364cf1f40928dbfa",
 			"license": "GPL-3.0",
 			"urls": [

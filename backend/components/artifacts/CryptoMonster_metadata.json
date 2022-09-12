@@ -236,19 +236,6 @@
 			},
 			{
 				"inputs": [],
-				"name": "getApplicationNotReviewed",
-				"outputs": [
-					{
-						"internalType": "address[]",
-						"name": "",
-						"type": "address[]"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
 				"name": "get_blackList",
 				"outputs": [
 					{
@@ -303,6 +290,13 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "startPrivatePhase",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -411,7 +405,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"GitHub/contract-token-cryptoMonster/backend/components/CryptoMonster.sol": "CryptoMonster"
+			"Documents/GitHub/contract-token-cryptoMonster/backend/components/CryptoMonster.sol": "CryptoMonster"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -425,23 +419,23 @@
 		"remappings": []
 	},
 	"sources": {
-		"GitHub/contract-token-cryptoMonster/backend/components/CryptoMonster.sol": {
-			"keccak256": "0x6fd449cda466ff29fb178d44b084f550c08574b2bb9d54e2322412485c71d7bd",
+		"Documents/GitHub/contract-token-cryptoMonster/backend/components/CryptoMonster.sol": {
+			"keccak256": "0x9675f3d4cb187683cb872ccd896276aaec43a7203ba4b0f318de90438236e7d5",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://065858bf3eb42e2b85bb751196e2ab25bed4f6bae8ab1fc57a4a7fea1529021d",
-				"dweb:/ipfs/QmdDAsMKNQR7vPn9nkyH4jQ2Uuca1RXLRjzUhaJyoD8uRV"
+				"bzz-raw://0e2268cd0d7ae62ce7f6fce74a039bcd11c9dfeb81d75a841484a79ad26715ab",
+				"dweb:/ipfs/QmNnmaAinfNEmz3BxTj42EuieFUBAeriWro8HY6dbbsqMz"
 			]
 		},
-		"GitHub/contract-token-cryptoMonster/backend/components/PhasePrivate.sol": {
-			"keccak256": "0xe076883d0946ba97d510d064d0e1fbe254abd6a46a4dd67f1df357535c1ac3d0",
+		"Documents/GitHub/contract-token-cryptoMonster/backend/components/PhasePrivate.sol": {
+			"keccak256": "0xefa4f3aa4ad1cecc83fa24c4312d5c10e928f9b785f6658cdda06cb26cbfc1fe",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://4a89463663dbb84057fd7c8a112d88ef4c1ba971cc53c6d9952bba8843fa952f",
-				"dweb:/ipfs/QmVjQpqvqYBLxxdb4HmGs2QkmYu73dKkdWsHNePfUP5tze"
+				"bzz-raw://037aa78310fcba2c34448553322677dd3717e4475688f9291dc6152bf9771623",
+				"dweb:/ipfs/Qma7iePRzZwC2BDArFeGpJzRHM6zryBos5SMvmsmWMBRzJ"
 			]
 		},
-		"GitHub/contract-token-cryptoMonster/backend/components/PhaseSeed.sol": {
+		"Documents/GitHub/contract-token-cryptoMonster/backend/components/PhaseSeed.sol": {
 			"keccak256": "0x920e931332c5779c318fb2c2062142c3109ef6fc8afefe7671a7b54358e25ecf",
 			"license": "GPL-3.0",
 			"urls": [
@@ -449,7 +443,7 @@
 				"dweb:/ipfs/QmPuQx127RLGmroAUhFEy4fKt1snS8LAMHesNuJQUywBMF"
 			]
 		},
-		"GitHub/contract-token-cryptoMonster/backend/shared/helpers/helpresFunc.sol": {
+		"Documents/GitHub/contract-token-cryptoMonster/backend/shared/helpers/helpresFunc.sol": {
 			"keccak256": "0x5de0f31b2c721f2187a80581aea750f33adc647d0ac199043ddf54200215fd29",
 			"license": "GPL-3.0",
 			"urls": [
@@ -457,7 +451,7 @@
 				"dweb:/ipfs/QmVsqyZdZTxPfwvSEYEeGr2kWtjSrvaVM4cjY8WPVUi9Ts"
 			]
 		},
-		"GitHub/contract-token-cryptoMonster/backend/shared/helpers/modifireFunc.sol": {
+		"Documents/GitHub/contract-token-cryptoMonster/backend/shared/helpers/modifireFunc.sol": {
 			"keccak256": "0xb2df03f445a18d4482d9ed070d383d0bc4244102e78e394dde2d2d1b4b048cf0",
 			"license": "GPL-3.0",
 			"urls": [
@@ -465,7 +459,7 @@
 				"dweb:/ipfs/Qmbu7hgAqRHEBJVSvR5gYt3gNtKESANykaK6CXcoyUREXD"
 			]
 		},
-		"GitHub/contract-token-cryptoMonster/backend/shared/helpers/validateFuncs.sol": {
+		"Documents/GitHub/contract-token-cryptoMonster/backend/shared/helpers/validateFuncs.sol": {
 			"keccak256": "0xe5ae80761de92b045fc3aef1f2eecc230e54094b457520aed3187bf7292c6538",
 			"license": "GPL-3.0",
 			"urls": [
@@ -473,7 +467,7 @@
 				"dweb:/ipfs/QmcrfuRjB5gs2GzgDCH8ADkp26Lo6Bi8pqVdUjFu5o2c8h"
 			]
 		},
-		"GitHub/contract-token-cryptoMonster/backend/shared/lib/IERC20.sol": {
+		"Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/IERC20.sol": {
 			"keccak256": "0xaf036a21cac1b39999f4f57c20939eb30c1c818c3ad3ac99010fcbad0badb5ff",
 			"license": "GPL-3.0",
 			"urls": [
@@ -481,7 +475,7 @@
 				"dweb:/ipfs/QmVsEVBc8wG37chWLLCM3AAdwJBppXqEqUBL3SWGuMqw1m"
 			]
 		},
-		"GitHub/contract-token-cryptoMonster/backend/shared/lib/SafeMath.sol": {
+		"Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/SafeMath.sol": {
 			"keccak256": "0xf430ff20a1998bdd5fa93c6b9e623cce686a19b73e97f317012b06c01de28661",
 			"license": "GPL-3.0",
 			"urls": [
@@ -489,7 +483,7 @@
 				"dweb:/ipfs/Qmf9dYztjw9AZdsMuxW4YBNzE8Z9u2Ke9WBFhzSnbffKy4"
 			]
 		},
-		"GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol": {
+		"Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol": {
 			"keccak256": "0xca184d7adbbe19d6a20e62cddc74ada2857bfea6a3e47738364cf1f40928dbfa",
 			"license": "GPL-3.0",
 			"urls": [

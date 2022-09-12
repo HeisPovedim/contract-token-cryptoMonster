@@ -34,10 +34,10 @@ contract CryptoMonster is IERC20, validateFuncs, PhaseSeed, PhasePrivate {
         structUsers_[ownerAdr] = structUser(Role.SYSTEM_OWNER ,"owner", get_keccak256("3412"), totalSupply_, 0, 0, 0);             // владелец 
         structUsers_[privateProviderAdr] = structUser(Role.SYSTEM_PRIVATE, "Private provider", get_keccak256("1423"), 0, 0, 0, 0); // private провайдер
         allowed[ownerAdr][privateProviderAdr] = totalSupply_;                                                                      // делегирование PRIVATE ПРОВАЙДЕРА
-        structPhases_[privateProviderAdr].statusPhase = false;                                                                     // присвоение статуса фазы
+        structPhases_[privateProviderAdr] = structPhase(false, false);                                                             // ?: назначение фазы
         structUsers_[publicProviderAdr] = structUser(Role.SYSTEM_PUBLIC, "Public provider", get_keccak256("2314"), 0, 0, 0, 0);    // public провайдер
         allowed[ownerAdr][publicProviderAdr] = totalSupply_;                                                                       // делегирование PUBLIC ПРОВАЙДЕРА
-        structPhases_[publicProviderAdr].statusPhase = false;                                                                      // присвоение статуса фазы
+        structPhases_[publicProviderAdr] = structPhase(false, false);                                                              // ?: назначение фазы
 
         // COMMENT: Перечесление средств инвесторам.
         transfer(investorFirstAdr, 600000);  // Investor1
@@ -49,6 +49,12 @@ contract CryptoMonster is IERC20, validateFuncs, PhaseSeed, PhasePrivate {
     function buy(uint256 _amount) external payable {
         // например: покупатель хочет 1 токенов, для этого он должен отправить 5 вэй
         require(msg.value == _amount * tokenPrice_, "Need to send exact amount of wei");
+        bool _itsOwenr = false;
+        if (validateOwner() == true) {
+            structUsers_[msg.sender].balance_overall = structUsers_[msg.sender].balance_overall.add(_amount);
+            _itsOwenr = true;
+        }
+        require(_itsOwenr == false);
         require(structPhases_[privateProviderAdr].statusPhase == false && structPhases_[publicProviderAdr].statusPhase == false, "During the seed phase, the transfer of tokens is prohibited");
         if (structPhases_[privateProviderAdr].statusPhase == true) {
             structUsers_[msg.sender].balance_private = structUsers_[msg.sender].balance_private.add(_amount);
