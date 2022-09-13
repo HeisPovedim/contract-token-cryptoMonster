@@ -21,4 +21,19 @@ contract helpresFunc is modifireFunc {
     function get_blackList() public onlyOwner view returns (address[] memory) {
         return(blackList);
     }
+
+    // COMMENT_FUNC: Функция вернет текущий баланс SEED токенов.
+    function getBalanceSeedToken (address _userAdr) public view returns (uint256) {
+        return structUsers_[_userAdr].balance_seed;
+    }
+
+    // COMMENT_FUNC: Функция вернет текущий баланс PRIVATE токенов.
+    function getBalancePrivateToken (address _userAdr) public view returns (uint256) {
+        return structUsers_[_userAdr].balance_private;
+    }
+
+    // COMMENT_FUNC: Функция вернет текущий баланс PUBLIC токенов.
+    function getBalancePublicToken (address _userAdr) public view returns (uint256) {
+        return structUsers_[_userAdr].balance_public;
+    }
 }

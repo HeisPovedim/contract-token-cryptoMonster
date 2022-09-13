@@ -18,15 +18,8 @@ contract CryptoMonster is IERC20, validateFuncs, PhaseSeed, PhasePrivate {
     string public constant symbol = "CMON";        // тикер токена
     uint8 public constant decimals = 12;           // 1 000 000 000 000 == 1 CMON ; конвертация eth в wei: https://eth-converter.com/
 
-    mapping(address => mapping (address => uint256)) allowed; // делегированные пользоатели
-
     uint256 totalSupply_;                    // общее кол-во токенов при старте системы
     uint256 public tokenPrice_ = 1000000000; // 1 токен за 0.00075 ETH => 750000000; 0.001ETH => 1000000000 WEI | ЗНАЧЕНИЕ УКАЗЫВАЕТСЯ В WEI
-
-    // COMMENT: Набор начальных системных пользователей.
-    address constant ownerAdr = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4;           // ВЛАДЕЛЕЦ
-    address constant privateProviderAdr = 0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2; // PRIVATE ПРОВАЙДЕР
-    address constant publicProviderAdr = 0x4B20993Bc481177ec7E8f571ceCaE8A9e22C02db;  // PUBLIC ПРОВАЙДЕР
 
     constructor(uint256 total) {
         totalSupply_ = total; // кол-во токенов при старте
@@ -49,18 +42,26 @@ contract CryptoMonster is IERC20, validateFuncs, PhaseSeed, PhasePrivate {
     function buy(uint256 _amount) external payable {
         // например: покупатель хочет 1 токенов, для этого он должен отправить 5 вэй
         require(msg.value == _amount * tokenPrice_, "Need to send exact amount of wei");
-        bool _itsOwenr = false;
+        bool unintentionalError = false;
         if (validateOwner() == true) {
             structUsers_[msg.sender].balance_overall = structUsers_[msg.sender].balance_overall.add(_amount);
-            _itsOwenr = true;
-        }
-        require(_itsOwenr == false);
-        require(structPhases_[privateProviderAdr].statusPhase == false && structPhases_[publicProviderAdr].statusPhase == false, "During the seed phase, the transfer of tokens is prohibited");
-        if (structPhases_[privateProviderAdr].statusPhase == true) {
+        } else if (structPhases_[privateProviderAdr].statusPhase == false && structPhases_[publicProviderAdr].statusPhase == false) {
+            address _tempAdr;
+            for (uint i = 0; i < whiteList.length; i++) {
+                _tempAdr = whiteList[i];
+                if (_tempAdr == msg.sender) {
+                    structUsers_[msg.sender].balance_seed = structUsers_[msg.sender].balance_seed.add(_amount);
+                }
+            }
+            unintentionalError = true;
+        } else if (structPhases_[privateProviderAdr].statusPhase == true) {
             structUsers_[msg.sender].balance_private = structUsers_[msg.sender].balance_private.add(_amount);
+            unintentionalError = true;
         } else if (structPhases_[publicProviderAdr].statusPhase == true) {
             structUsers_[msg.sender].balance_public = structUsers_[msg.sender].balance_public.add(_amount);
+            unintentionalError = true;
         }
+        require(unintentionalError == true, "An unintentional error has occurred");
     }
 
     // COMMENT_FUNC: Функция вернет количество всех токенов, выделенных этим контрактом, независимо от владельца.

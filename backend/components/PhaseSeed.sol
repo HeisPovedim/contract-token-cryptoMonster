@@ -15,4 +15,3 @@ contract PhaseSeed is validateFuncs {
         structUsers_[bestFriendAdr] = structUser(Role.INVESTOR, "Best friend", get_keccak256("2314"), 0, 0, 0, 0);   // Best friend
     }
 }
-

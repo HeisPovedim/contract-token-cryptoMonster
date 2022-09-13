@@ -22,6 +22,12 @@ contract structures {
         uint256 balance_public;  // баланс PUBLIC токенов
     }
     mapping (address => structUser) structUsers_; // обращение к структуре по АДРЕСАМ
+    mapping(address => mapping (address => uint256)) allowed; // делегированные пользоатели
+
+    // COMMENT: Набор начальних пользователей. 
+    address constant ownerAdr = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4;           // ВЛАДЕЛЕЦ
+    address constant privateProviderAdr = 0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2; // PRIVATE ПРОВАЙДЕР
+    address constant publicProviderAdr = 0x4B20993Bc481177ec7E8f571ceCaE8A9e22C02db;  // PUBLIC ПРОВАЙДЕР
 
     // COMMENT_SCTRUC: Структура фазы.
     struct structPhase {

@@ -6,6 +6,63 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_userAdr",
+						"type": "address"
+					}
+				],
+				"name": "getBalancePrivateToken",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_userAdr",
+						"type": "address"
+					}
+				],
+				"name": "getBalancePublicToken",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_userAdr",
+						"type": "address"
+					}
+				],
+				"name": "getBalanceSeedToken",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "get_blackList",
 				"outputs": [
@@ -64,7 +121,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"GitHub/contract-token-cryptoMonster/backend/shared/helpers/helpresFunc.sol": "helpresFunc"
+			"Documents/GitHub/contract-token-cryptoMonster/backend/shared/helpers/helpresFunc.sol": "helpresFunc"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -72,34 +129,34 @@
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
-			"enabled": false,
-			"runs": 200
+			"enabled": true,
+			"runs": 1
 		},
 		"remappings": []
 	},
 	"sources": {
-		"GitHub/contract-token-cryptoMonster/backend/shared/helpers/helpresFunc.sol": {
-			"keccak256": "0x8e9421a646e263df6ef5f3dd43ad2a3aada2404f06e5c1a8527c4516bba66021",
+		"Documents/GitHub/contract-token-cryptoMonster/backend/shared/helpers/helpresFunc.sol": {
+			"keccak256": "0x931e614110be8a40d7d5bd7b96206527e6ef7186fd32d2ee337c5fb6c60d76db",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://d41237b2d11de7879678961507b24d3cb31d1f6ee45b2d9c86d8180203c6b6de",
-				"dweb:/ipfs/QmWmp4L9cJvZXNvGfVKYs6PAxmToDuaVQFsnZjsqNqf76i"
+				"bzz-raw://5fb919dbe488b56db674a06a354ac14cd1bd115e481105544edba09892b17bc0",
+				"dweb:/ipfs/QmPvvEB6kFqvdNJuJXnQqXSbHEzEhqbT4FfzyVovoBgfGA"
 			]
 		},
-		"GitHub/contract-token-cryptoMonster/backend/shared/helpers/modifireFunc.sol": {
-			"keccak256": "0xa219d13beeab74c578d139073447fce90bf448c56d66f4c7c9d2e087b0b6d065",
+		"Documents/GitHub/contract-token-cryptoMonster/backend/shared/helpers/modifireFunc.sol": {
+			"keccak256": "0xb2df03f445a18d4482d9ed070d383d0bc4244102e78e394dde2d2d1b4b048cf0",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://2505206cdf0010ae3e5164196772746812643d9d709ea651f9588980a9476153",
-				"dweb:/ipfs/QmTofkQYXgG2mHUMKYGZDzJs61xiS4AWk8u7ofqZvrXcKH"
+				"bzz-raw://3ed7bb10cf992ce488dff80656254a8152cbd128ccc5f3fc01a6d73d22aecacd",
+				"dweb:/ipfs/Qmbu7hgAqRHEBJVSvR5gYt3gNtKESANykaK6CXcoyUREXD"
 			]
 		},
-		"GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol": {
-			"keccak256": "0xca184d7adbbe19d6a20e62cddc74ada2857bfea6a3e47738364cf1f40928dbfa",
+		"Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol": {
+			"keccak256": "0xaecda95766dde429516a3aba4cc5642483ceca17e86a8d8913eeefef86e532c3",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://9092664380761a6bde2606c20b60fda42fb4f694cd0b8eb47fdd572dc0f5ddb3",
-				"dweb:/ipfs/QmPhpmEW6Mnfik6AcFQ7iZujMtyaDu8NEQdkoj5EXSnWS2"
+				"bzz-raw://a262264bd2e8dae40776f2b27ccf44179409253606aa2f19379eca742c131b34",
+				"dweb:/ipfs/QmfMBB4mtSQ7VKEEpJfEEJTdgF81zC5psqQdwRptUs6pTU"
 			]
 		}
 	},
