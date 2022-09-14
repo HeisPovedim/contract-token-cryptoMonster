@@ -24,6 +24,9 @@ contract structures {
     mapping (address => structUser) structUsers_; // обращение к структуре по АДРЕСАМ
     mapping(address => mapping (address => uint256)) allowed; // делегированные пользоатели
 
+    // COMMENT: Цена за 1 токен.
+    uint256 public tokenPrice_ = 750000000; // 1 токен за 0.00075 ETH => 750000000; 0.001ETH => 1000000000 WEI | ЗНАЧЕНИЕ УКАЗЫВАЕТСЯ В WEI
+
     // COMMENT: Набор начальних пользователей. 
     address constant ownerAdr = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4;           // ВЛАДЕЛЕЦ
     address constant privateProviderAdr = 0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2; // PRIVATE ПРОВАЙДЕР

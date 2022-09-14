@@ -8,7 +8,7 @@ pragma experimental ABIEncoderV2;
 contract PhasePrivate is validateFuncs {
 
     // COMMENT_FUNC: Функция подачи заявок пользователей.
-    function application(string memory _name, string memory _contactForCommunication, address _userAdr) public {
+    function application(string memory _name, string memory _contactForCommunication, address _userAdr) public onlyUser {
         bool _tempExist = false;
         require(structPhases_[0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2].statusPhase == false && structPhases_[0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2].statusPhase == false, "Application phase ended"); // !: проверка на то, что заявка подается во время SEED стадии
         require(msg.sender == _userAdr, "You can't send an application to someone else's address");
@@ -27,20 +27,6 @@ contract PhasePrivate is validateFuncs {
     function getApplicationAmountAdr () public onlyPrivateProvider view returns (address[] memory) {
         return structApplicationsAmountAdr; // ?: вывод массив пользователей подававших заявление
     }
-    
-    // COMMENT_FUNC: Функция получения адресов, чьи заявки ещё не были рассмотрены.
-    // function getApplicationNotReviewed () public onlyPrivateProvider view returns (address[] memory) {
-    //     address[] memory _tempAdrAmount; // ?: массив адресов
-    //     for (uint i = 0; i < structApplicationsAmountAdr.length; i++) {
-    //         uint count = 0;                                       // ?: счетчик для массива адресов
-    //         address _tempAdr = structApplicationsAmountAdr[i];    // ?: массив адресов, чьи заявки ещё не были рассмотрены
-    //         if (strucApplications_[_tempAdr].reviewed == false) { // !: проверка того, что заявка ещё не была рассмотрена
-    //             _tempAdrAmount[count] = _tempAdr;                 // ?: запись в массив адресов, чьи заявки ещё не были рассмотрены
-    //             count++;                                          // ?: прибавление счетчика для массива адресов
-    //         }
-    //     }
-    //     return _tempAdrAmount; // ?: возвращение массива адресов, чьи заявки ещё не были рассмотрены
-    // }
 
     // COMMENT_FUNC: Функция принятия заявки.
     function acceptApplication (address _userAdr) public onlyPrivateProvider {
@@ -60,6 +46,7 @@ contract PhasePrivate is validateFuncs {
     // COMMENT_FUNC: Функция включения приватной стадии.
     function startPrivatePhase () public onlyPrivateProvider {
         require(structPhases_[msg.sender].statusPhase == false && structPhases_[msg.sender].reviewed == false, "Phase already active");
+        tokenPrice_ = 1000000000;
         structPhases_[msg.sender] = structPhase(true, true);
     }
 

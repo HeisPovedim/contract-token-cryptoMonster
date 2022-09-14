@@ -19,7 +19,6 @@ contract CryptoMonster is IERC20, validateFuncs, PhaseSeed, PhasePrivate {
     uint8 public constant decimals = 12;           // 1 000 000 000 000 == 1 CMON ; конвертация eth в wei: https://eth-converter.com/
 
     uint256 totalSupply_;                    // общее кол-во токенов при старте системы
-    uint256 public tokenPrice_ = 1000000000; // 1 токен за 0.00075 ETH => 750000000; 0.001ETH => 1000000000 WEI | ЗНАЧЕНИЕ УКАЗЫВАЕТСЯ В WEI
 
     constructor(uint256 total) {
         totalSupply_ = total; // кол-во токенов при старте
@@ -46,14 +45,7 @@ contract CryptoMonster is IERC20, validateFuncs, PhaseSeed, PhasePrivate {
         if (validateOwner() == true) {
             structUsers_[msg.sender].balance_overall = structUsers_[msg.sender].balance_overall.add(_amount);
         } else if (structPhases_[privateProviderAdr].statusPhase == false && structPhases_[publicProviderAdr].statusPhase == false) {
-            address _tempAdr;
-            for (uint i = 0; i < whiteList.length; i++) {
-                _tempAdr = whiteList[i];
-                if (_tempAdr == msg.sender) {
-                    structUsers_[msg.sender].balance_seed = structUsers_[msg.sender].balance_seed.add(_amount);
-                }
-            }
-            unintentionalError = true;
+            unintentionalError = false;
         } else if (structPhases_[privateProviderAdr].statusPhase == true) {
             structUsers_[msg.sender].balance_private = structUsers_[msg.sender].balance_private.add(_amount);
             unintentionalError = true;
@@ -61,7 +53,7 @@ contract CryptoMonster is IERC20, validateFuncs, PhaseSeed, PhasePrivate {
             structUsers_[msg.sender].balance_public = structUsers_[msg.sender].balance_public.add(_amount);
             unintentionalError = true;
         }
-        require(unintentionalError == true, "An unintentional error has occurred");
+        require(unintentionalError == true, "An unintentional error has occurred, or you are trying to buy tokens in the seed phase");
     }
 
     // COMMENT_FUNC: Функция вернет количество всех токенов, выделенных этим контрактом, независимо от владельца.

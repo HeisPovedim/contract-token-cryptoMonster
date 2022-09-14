@@ -4,7 +4,21 @@
 	},
 	"language": "Solidity",
 	"output": {
-		"abi": [],
+		"abi": [
+			{
+				"inputs": [],
+				"name": "tokenPrice_",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
 		"devdoc": {
 			"kind": "dev",
 			"methods": {},
@@ -26,26 +40,26 @@
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
-			"enabled": false,
-			"runs": 200
+			"enabled": true,
+			"runs": 1
 		},
 		"remappings": []
 	},
 	"sources": {
 		"Documents/GitHub/contract-token-cryptoMonster/backend/shared/helpers/modifireFunc.sol": {
-			"keccak256": "0xb2df03f445a18d4482d9ed070d383d0bc4244102e78e394dde2d2d1b4b048cf0",
+			"keccak256": "0x9df7e2dac723ef505e0e57aade89cc466f29ac4a75159d2da2652112557b4395",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://3ed7bb10cf992ce488dff80656254a8152cbd128ccc5f3fc01a6d73d22aecacd",
-				"dweb:/ipfs/Qmbu7hgAqRHEBJVSvR5gYt3gNtKESANykaK6CXcoyUREXD"
+				"bzz-raw://42f7071b429aa53bcd7261f1c596f35490ff6b9b52538b0013a4e97b5fd19bc0",
+				"dweb:/ipfs/QmULYvRvj5C1gAL66N85Y6M9tdmiTa8gyF1NjXgPVytncF"
 			]
 		},
 		"Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol": {
-			"keccak256": "0xca184d7adbbe19d6a20e62cddc74ada2857bfea6a3e47738364cf1f40928dbfa",
+			"keccak256": "0x986bd7827b64a7485186497127bf4674394a1b8cd132244b7f06f5eebdf1eb69",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://9092664380761a6bde2606c20b60fda42fb4f694cd0b8eb47fdd572dc0f5ddb3",
-				"dweb:/ipfs/QmPhpmEW6Mnfik6AcFQ7iZujMtyaDu8NEQdkoj5EXSnWS2"
+				"bzz-raw://bb46059b9d3409629c624a162b9b5a6fa3ab9c39ef7897946e6b18fd9eaccb3a",
+				"dweb:/ipfs/QmXHr3Fwi79e5x17S6BZJg8mbamzMLV4SwU3nmfvXxPquC"
 			]
 		}
 	},

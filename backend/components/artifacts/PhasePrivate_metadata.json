@@ -75,6 +75,63 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_userAdr",
+						"type": "address"
+					}
+				],
+				"name": "getBalancePrivateToken",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_userAdr",
+						"type": "address"
+					}
+				],
+				"name": "getBalancePublicToken",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_userAdr",
+						"type": "address"
+					}
+				],
+				"name": "getBalanceSeedToken",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "get_blackList",
 				"outputs": [
@@ -125,6 +182,19 @@
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "tokenPrice_",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -148,34 +218,34 @@
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
-			"enabled": false,
-			"runs": 200
+			"enabled": true,
+			"runs": 1
 		},
 		"remappings": []
 	},
 	"sources": {
 		"Documents/GitHub/contract-token-cryptoMonster/backend/components/PhasePrivate.sol": {
-			"keccak256": "0xf3f63b92a008d61cea496f6cd466b83250207b8f91a8f86fdbe7015d367f6346",
+			"keccak256": "0x8f6f9fef6646ef55a71ef824f99a1b72e0434be52d394271cb6b81f0439a89bd",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://151646da28ff418cc0590ea9aa74718ecee0434356745e683e5e59df1883681e",
-				"dweb:/ipfs/QmSodyQfzqUsMvNUdXxbX2QCes4BJ6vPMZVhosFEdePdcN"
+				"bzz-raw://c57d7bb1ea5eefd2f7ac908e61082937d3c3be3c863c85f023dd0190c71b64de",
+				"dweb:/ipfs/QmaHutfgXjq52sXMisGVHxsfhXzxxj8oBkHeB3zrY5gapw"
 			]
 		},
 		"Documents/GitHub/contract-token-cryptoMonster/backend/shared/helpers/helpresFunc.sol": {
-			"keccak256": "0x5de0f31b2c721f2187a80581aea750f33adc647d0ac199043ddf54200215fd29",
+			"keccak256": "0x931e614110be8a40d7d5bd7b96206527e6ef7186fd32d2ee337c5fb6c60d76db",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://1519c07047610ed7596d29aadc2c66acbd641ace1275da8ac0fe7a7f0791f6c0",
-				"dweb:/ipfs/QmVsqyZdZTxPfwvSEYEeGr2kWtjSrvaVM4cjY8WPVUi9Ts"
+				"bzz-raw://5fb919dbe488b56db674a06a354ac14cd1bd115e481105544edba09892b17bc0",
+				"dweb:/ipfs/QmPvvEB6kFqvdNJuJXnQqXSbHEzEhqbT4FfzyVovoBgfGA"
 			]
 		},
 		"Documents/GitHub/contract-token-cryptoMonster/backend/shared/helpers/modifireFunc.sol": {
-			"keccak256": "0xb2df03f445a18d4482d9ed070d383d0bc4244102e78e394dde2d2d1b4b048cf0",
+			"keccak256": "0x9df7e2dac723ef505e0e57aade89cc466f29ac4a75159d2da2652112557b4395",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://3ed7bb10cf992ce488dff80656254a8152cbd128ccc5f3fc01a6d73d22aecacd",
-				"dweb:/ipfs/Qmbu7hgAqRHEBJVSvR5gYt3gNtKESANykaK6CXcoyUREXD"
+				"bzz-raw://42f7071b429aa53bcd7261f1c596f35490ff6b9b52538b0013a4e97b5fd19bc0",
+				"dweb:/ipfs/QmULYvRvj5C1gAL66N85Y6M9tdmiTa8gyF1NjXgPVytncF"
 			]
 		},
 		"Documents/GitHub/contract-token-cryptoMonster/backend/shared/helpers/validateFuncs.sol": {
@@ -187,11 +257,11 @@
 			]
 		},
 		"Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol": {
-			"keccak256": "0xca184d7adbbe19d6a20e62cddc74ada2857bfea6a3e47738364cf1f40928dbfa",
+			"keccak256": "0x986bd7827b64a7485186497127bf4674394a1b8cd132244b7f06f5eebdf1eb69",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://9092664380761a6bde2606c20b60fda42fb4f694cd0b8eb47fdd572dc0f5ddb3",
-				"dweb:/ipfs/QmPhpmEW6Mnfik6AcFQ7iZujMtyaDu8NEQdkoj5EXSnWS2"
+				"bzz-raw://bb46059b9d3409629c624a162b9b5a6fa3ab9c39ef7897946e6b18fd9eaccb3a",
+				"dweb:/ipfs/QmXHr3Fwi79e5x17S6BZJg8mbamzMLV4SwU3nmfvXxPquC"
 			]
 		}
 	},

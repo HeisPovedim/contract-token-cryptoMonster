@@ -22,4 +22,15 @@ contract modifireFunc is structures {
         require(structUsers_[msg.sender].role == Role.SYSTEM_OWNER || structUsers_[msg.sender].role == Role.SYSTEM_PRIVATE, "You are not the owner or private provider");
         _;
     }
+
+    // COMMENT_MOD: Модификатор проверка того, что пользователь обычный user.
+    modifier onlyUser () {
+        require(
+            structUsers_[msg.sender].role != Role.SYSTEM_OWNER ||
+            structUsers_[msg.sender].role != Role.SYSTEM_PUBLIC ||
+            structUsers_[msg.sender].role != Role.SYSTEM_PRIVATE ||
+            structUsers_[msg.sender].role != Role.INVESTOR, "Application can only be submitted by regular users"
+        );
+        _;
+    }
 }
