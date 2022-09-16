@@ -191,7 +191,18 @@
 					}
 				],
 				"name": "buy",
-				"outputs": [],
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					},
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
 				"stateMutability": "payable",
 				"type": "function"
 			},
@@ -378,6 +389,19 @@
 			},
 			{
 				"inputs": [],
+				"name": "tokenAmount_",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "tokenPrice_",
 				"outputs": [
 					{
@@ -477,42 +501,42 @@
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
-			"enabled": true,
-			"runs": 1
+			"enabled": false,
+			"runs": 200
 		},
 		"remappings": []
 	},
 	"sources": {
 		"Documents/GitHub/contract-token-cryptoMonster/backend/components/CryptoMonster.sol": {
-			"keccak256": "0xd9e48d8d41992be479fb44488889266b27b824e3e7b9a73722a5159d6fa2f7b8",
+			"keccak256": "0xa0496eb9288f77096ca7f49b7ff857caf86e28a3877c8903059d75cecce921c8",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://f2c429cc1f57d9ab22e111da71254806731e78388c4afdba547da7e5d99ead72",
-				"dweb:/ipfs/QmQhevJPw4XAMrJ9kCGFPaNaRRVsERaLNDdFyXqxBxeiEY"
+				"bzz-raw://ff56c5a1194f25268c8d55879d18561146b91ec4a6b5ae6d6e231519dc17151a",
+				"dweb:/ipfs/QmeJMtQMt5VBDUt8ZAMTEusCfaTD3Uw6uvbWLkZywn87BX"
 			]
 		},
 		"Documents/GitHub/contract-token-cryptoMonster/backend/components/PhasePrivate.sol": {
-			"keccak256": "0x8f6f9fef6646ef55a71ef824f99a1b72e0434be52d394271cb6b81f0439a89bd",
+			"keccak256": "0x4130ffb68721aa0672041b5065a2c74866c8e3c69583f79938e994a35177af18",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://c57d7bb1ea5eefd2f7ac908e61082937d3c3be3c863c85f023dd0190c71b64de",
-				"dweb:/ipfs/QmaHutfgXjq52sXMisGVHxsfhXzxxj8oBkHeB3zrY5gapw"
+				"bzz-raw://1355cb9c89e8088f97423f85c2e17806484a671c471d2bc6d8cbdb1d06950ec2",
+				"dweb:/ipfs/QmZjJ22Py8f4r4HZr17d5PLYi5VzSidpvwkEUA6Sd9Jj2P"
 			]
 		},
 		"Documents/GitHub/contract-token-cryptoMonster/backend/components/PhaseSeed.sol": {
-			"keccak256": "0xd0814be4f697e4d30db4bfd6eaf047b91ac4def1232a6e00efaa9976f3d805f2",
+			"keccak256": "0x34a5653d98f8952273900a4f3f6ac234983282412b82e1fe61425b3787a04d08",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://17b418b7d58243c240314dbea50d52c5c77a68f5fb858a8a6e62759dea74861f",
-				"dweb:/ipfs/QmWEo5FjXRrnXxpwzYhbMoHkmr69iUNfhXxqAUUVeMVXZT"
+				"bzz-raw://7249e91902f62352e2cfe2b020cc1b1dc5cf43258f9db5c5c1cc2f544627f356",
+				"dweb:/ipfs/Qmf8DWMT7Qy3oGBy36teFJT1TYejUQe1R2EbxqH9yB4rXQ"
 			]
 		},
 		"Documents/GitHub/contract-token-cryptoMonster/backend/shared/helpers/helpresFunc.sol": {
-			"keccak256": "0x931e614110be8a40d7d5bd7b96206527e6ef7186fd32d2ee337c5fb6c60d76db",
+			"keccak256": "0x5b40e44cf32ee695c9b4a239819bd0a3aec8d89ea027b4705c7fb4d18d631cf1",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://5fb919dbe488b56db674a06a354ac14cd1bd115e481105544edba09892b17bc0",
-				"dweb:/ipfs/QmPvvEB6kFqvdNJuJXnQqXSbHEzEhqbT4FfzyVovoBgfGA"
+				"bzz-raw://355406fc554229b0cc5bdc56bed0dfc105705c6f4a7bc7961a486c46f0a992f3",
+				"dweb:/ipfs/QmR41xNEPBJHLWzahATAfMw41E5X4KXkmBNayAKGwUMQxn"
 			]
 		},
 		"Documents/GitHub/contract-token-cryptoMonster/backend/shared/helpers/modifireFunc.sol": {
@@ -524,11 +548,11 @@
 			]
 		},
 		"Documents/GitHub/contract-token-cryptoMonster/backend/shared/helpers/validateFuncs.sol": {
-			"keccak256": "0xe5ae80761de92b045fc3aef1f2eecc230e54094b457520aed3187bf7292c6538",
+			"keccak256": "0x60b9cdfb4a2bbfdc31d7f639fb5d515c5ad0d9aeb8100e388e3f501b3fcf37c4",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://79b619d03d75cb74c3adbe48c3baa3d7ff84b04fcf3f2d4865076672089b1624",
-				"dweb:/ipfs/QmcrfuRjB5gs2GzgDCH8ADkp26Lo6Bi8pqVdUjFu5o2c8h"
+				"bzz-raw://194b157a848877dbc641280375085bba0efc260b67a868f41205bdc1dd5e519d",
+				"dweb:/ipfs/QmeS8HCUedJDyym8Mybi3GaqAt6ABZXFBUnr9EwT6F1SKz"
 			]
 		},
 		"Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/IERC20.sol": {
@@ -548,11 +572,11 @@
 			]
 		},
 		"Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol": {
-			"keccak256": "0x986bd7827b64a7485186497127bf4674394a1b8cd132244b7f06f5eebdf1eb69",
+			"keccak256": "0xea8efd41e9b10029637121123e94c0106e3164c790f18eb5cb7e938ce7f60005",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://bb46059b9d3409629c624a162b9b5a6fa3ab9c39ef7897946e6b18fd9eaccb3a",
-				"dweb:/ipfs/QmXHr3Fwi79e5x17S6BZJg8mbamzMLV4SwU3nmfvXxPquC"
+				"bzz-raw://b0b229072dd849251d0d9da81ae6294a9f9438844cea581fcce6691fa16ba4bb",
+				"dweb:/ipfs/QmNoSWRUbximeoyZQDbWTkAH9zSJZ5qyopyZk5o54x2aqa"
 			]
 		}
 	},

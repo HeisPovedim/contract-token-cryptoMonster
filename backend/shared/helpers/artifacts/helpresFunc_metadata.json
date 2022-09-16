@@ -106,6 +106,32 @@
 				],
 				"stateMutability": "view",
 				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "tokenAmount_",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "tokenPrice_",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -136,27 +162,27 @@
 	},
 	"sources": {
 		"Documents/GitHub/contract-token-cryptoMonster/backend/shared/helpers/helpresFunc.sol": {
-			"keccak256": "0x931e614110be8a40d7d5bd7b96206527e6ef7186fd32d2ee337c5fb6c60d76db",
+			"keccak256": "0x5b40e44cf32ee695c9b4a239819bd0a3aec8d89ea027b4705c7fb4d18d631cf1",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://5fb919dbe488b56db674a06a354ac14cd1bd115e481105544edba09892b17bc0",
-				"dweb:/ipfs/QmPvvEB6kFqvdNJuJXnQqXSbHEzEhqbT4FfzyVovoBgfGA"
+				"bzz-raw://355406fc554229b0cc5bdc56bed0dfc105705c6f4a7bc7961a486c46f0a992f3",
+				"dweb:/ipfs/QmR41xNEPBJHLWzahATAfMw41E5X4KXkmBNayAKGwUMQxn"
 			]
 		},
 		"Documents/GitHub/contract-token-cryptoMonster/backend/shared/helpers/modifireFunc.sol": {
-			"keccak256": "0xb2df03f445a18d4482d9ed070d383d0bc4244102e78e394dde2d2d1b4b048cf0",
+			"keccak256": "0x9df7e2dac723ef505e0e57aade89cc466f29ac4a75159d2da2652112557b4395",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://3ed7bb10cf992ce488dff80656254a8152cbd128ccc5f3fc01a6d73d22aecacd",
-				"dweb:/ipfs/Qmbu7hgAqRHEBJVSvR5gYt3gNtKESANykaK6CXcoyUREXD"
+				"bzz-raw://42f7071b429aa53bcd7261f1c596f35490ff6b9b52538b0013a4e97b5fd19bc0",
+				"dweb:/ipfs/QmULYvRvj5C1gAL66N85Y6M9tdmiTa8gyF1NjXgPVytncF"
 			]
 		},
 		"Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol": {
-			"keccak256": "0xaecda95766dde429516a3aba4cc5642483ceca17e86a8d8913eeefef86e532c3",
+			"keccak256": "0xea8efd41e9b10029637121123e94c0106e3164c790f18eb5cb7e938ce7f60005",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://a262264bd2e8dae40776f2b27ccf44179409253606aa2f19379eca742c131b34",
-				"dweb:/ipfs/QmfMBB4mtSQ7VKEEpJfEEJTdgF81zC5psqQdwRptUs6pTU"
+				"bzz-raw://b0b229072dd849251d0d9da81ae6294a9f9438844cea581fcce6691fa16ba4bb",
+				"dweb:/ipfs/QmNoSWRUbximeoyZQDbWTkAH9zSJZ5qyopyZk5o54x2aqa"
 			]
 		}
 	},

@@ -46,7 +46,6 @@ contract PhasePrivate is validateFuncs {
     // COMMENT_FUNC: Функция включения приватной стадии.
     function startPrivatePhase () public onlyPrivateProvider {
         require(structPhases_[msg.sender].statusPhase == false && structPhases_[msg.sender].reviewed == false, "Phase already active");
-        tokenPrice_ = 1000000000;
         structPhases_[msg.sender] = structPhase(true, true);
     }
 
@@ -55,5 +54,12 @@ contract PhasePrivate is validateFuncs {
         require(structPhases_[msg.sender].statusPhase == true && structPhases_[msg.sender].reviewed == true, "Phase has not yet been activated");
         structPhases_[msg.sender] = structPhase(false, true);
         structPhases_[0x4B20993Bc481177ec7E8f571ceCaE8A9e22C02db] = structPhase(true, true);
+        tokenPrice_ = 1000000000;
+        tokenAmount_ = 5000;
+    }
+    
+    // COMMENT_FUNC: Функция изменения стоимости токена.
+    function changeTokenAmountPricePrivate (uint _price) public onlyPrivateProvider {
+        tokenAmount_ = _price;
     }
 }

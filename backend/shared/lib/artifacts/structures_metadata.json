@@ -7,6 +7,19 @@
 		"abi": [
 			{
 				"inputs": [],
+				"name": "tokenAmount_",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "tokenPrice_",
 				"outputs": [
 					{
@@ -47,11 +60,11 @@
 	},
 	"sources": {
 		"Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol": {
-			"keccak256": "0x986bd7827b64a7485186497127bf4674394a1b8cd132244b7f06f5eebdf1eb69",
+			"keccak256": "0xea8efd41e9b10029637121123e94c0106e3164c790f18eb5cb7e938ce7f60005",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://bb46059b9d3409629c624a162b9b5a6fa3ab9c39ef7897946e6b18fd9eaccb3a",
-				"dweb:/ipfs/QmXHr3Fwi79e5x17S6BZJg8mbamzMLV4SwU3nmfvXxPquC"
+				"bzz-raw://b0b229072dd849251d0d9da81ae6294a9f9438844cea581fcce6691fa16ba4bb",
+				"dweb:/ipfs/QmNoSWRUbximeoyZQDbWTkAH9zSJZ5qyopyZk5o54x2aqa"
 			]
 		}
 	},

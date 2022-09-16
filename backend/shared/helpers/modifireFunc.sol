@@ -17,6 +17,12 @@ contract modifireFunc is structures {
         _;
     }
 
+    // COMMENT_MOD: Модификатор проверка роли PRIVAT ПРОВАЙДЕРА.
+    modifier onlyPublicProvider () {
+        require(structUsers_[msg.sender].role == Role.SYSTEM_PUBLIC, "Your not Private provider");
+        _;
+    }
+
     // COMMENT_MOD: Модификатор проверки роли ВЛАДЕЛЬЦ или PRIVAT ПРОВАЙДЕРА.
     modifier onlyOwnerAndPrivateProvider () {
         require(structUsers_[msg.sender].role == Role.SYSTEM_OWNER || structUsers_[msg.sender].role == Role.SYSTEM_PRIVATE, "You are not the owner or private provider");

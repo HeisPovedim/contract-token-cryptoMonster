@@ -11,7 +11,10 @@ contract PhaseSeed is validateFuncs {
     // COMMENT: Набор начальных пользователей.
     constructor() {
         structUsers_[investorFirstAdr] = structUser(Role.INVESTOR , "Investor1", get_keccak256("3412"), 0, 0, 0, 0); // Investor1
+        whiteList.push(investorFirstAdr); // добавление 1-го инвестора в белый список
         structUsers_[investorSecondAdr] = structUser(Role.INVESTOR, "Investor1", get_keccak256("1423"), 0, 0, 0, 0); // Investor2
+        whiteList.push(investorSecondAdr); // добавление 2-го инвестора в белый список
         structUsers_[bestFriendAdr] = structUser(Role.INVESTOR, "Best friend", get_keccak256("2314"), 0, 0, 0, 0);   // Best friend
+        whiteList.push(bestFriendAdr); // добавление лучшего друга в белый список
     }
 }

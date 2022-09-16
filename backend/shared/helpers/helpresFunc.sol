@@ -10,8 +10,6 @@ contract helpresFunc is modifireFunc {
             return(keccak256(abi.encodePacked(_hash)));
     }
 
-    // COMMENT_FUNC: Получение списка 
-
     // COMMENT_FUNC: Получение белого списка.
     function get_whiteList() public onlyOwnerAndPrivateProvider view returns (address[] memory) {
         return(whiteList);
