@@ -7,7 +7,7 @@ contract PhasePublic is validateFuncs {
 
     // COMMENT_FUNC: Функция изменения стоимости токена.
     function changeTokenAmountPricePublic (uint _price) public onlyPublicProvider {
-        tokenAmount_ = _price;
+        tokenPrice_ = _price;
     }
 
 }

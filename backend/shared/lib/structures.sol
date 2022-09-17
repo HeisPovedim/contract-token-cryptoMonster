@@ -25,8 +25,8 @@ contract structures {
     mapping(address => mapping (address => uint256)) allowed; // делегированные пользоатели
 
     // COMMENT: Цена за 1 токен.
-    uint256 public tokenPrice_ = 750000000; // 1 токен за 0.00075 ETH => 750000000; 0.001ETH => 1000000000 WEI | ЗНАЧЕНИЕ УКАЗЫВАЕТСЯ В WEI
-
+    uint256 public tokenPrice_ = 750000000; // 1 токен за 0.00075 ETH => 750000000; 0.001ETH => 1000000000 WEI; 0.002 => 2000000000 WEI | ЗНАЧЕНИЕ УКАЗЫВАЕТСЯ В WEI
+    
     // COMMENT: Ограничение цены токена.
     uint public tokenAmount_ = 100000; // кол-во, которое может купить токенов пользователь | private = 100 000 CMON; public = 5 000 CMON
 

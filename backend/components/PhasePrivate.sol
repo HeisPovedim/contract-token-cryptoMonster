@@ -60,6 +60,6 @@ contract PhasePrivate is validateFuncs {
     
     // COMMENT_FUNC: Функция изменения стоимости токена.
     function changeTokenAmountPricePrivate (uint _price) public onlyPrivateProvider {
-        tokenAmount_ = _price;
+        tokenPrice_ = _price;
     }
 }
