@@ -3,15 +3,24 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 // #: COMPONENTS
-import { useContext } from '../contract/context';
+import { UseContext } from '../contract/context';
 
 const Authorization = () => {
 
   // ^: STATES
-  const { web3, contract } = React.UseContext();
-  const [accounts, setAccounts] = React.ComponentuseState([]);
+  const { web3, contract } = UseContext();
+  const [accounts, setAccounts] = React.useState([]);
   const [address, setAddress] = React.useState('');
   const [password, setPassword] = React.useState('');
+
+  // ^: HANDLERS
+  const handleAddress = (e) => {
+    setAddress(e.target.value)
+  }
+
+  const hadlePassword = (e) => {
+    setPassword(e.target.value)
+  }
 
   // ^: HOOKS
   React.useEffect(() => {
@@ -45,7 +54,7 @@ const Authorization = () => {
       <h4>Авторизация</h4>
     <form onSubmit={ authorisation }>
       <select onChange = { handleAddress } className='btn btn-primary select-auto'>
-        {Accounts.map((arr,i)=><option key={i} value={String(arr)}>{arr}</option>)}
+        {accounts.map((arr,i)=><option key={i} value={String(arr)}>{arr}</option>)}
       </select>
       <input type = "text" onChange = { hadlePassword } placeholder = "Пароль" className='btn btn-warning pas-input'></input>
       <button className='btn btn-dark but-auto'>Авторизоваться</button>
