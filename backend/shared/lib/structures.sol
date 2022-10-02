@@ -21,7 +21,7 @@ contract structures {
         uint256 balance_private; // баланс PRIVATE токенов
         uint256 balance_public;  // баланс PUBLIC токенов
     }
-    mapping (address => structUser) structUsers_; // обращение к структуре по АДРЕСАМ
+    mapping (address => structUser) public structUsers_; // обращение к структуре по АДРЕСАМ
     mapping(address => mapping (address => uint256)) allowed; // делегированные пользоатели
 
     // COMMENT: Цена за 1 токен.
@@ -31,9 +31,9 @@ contract structures {
     uint public tokenAmount_ = 100000; // кол-во, которое может купить токенов пользователь | private = 100 000 CMON; public = 5 000 CMON
 
     // COMMENT: Набор начальних пользователей. 
-    address constant ownerAdr = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4;           // ВЛАДЕЛЕЦ
-    address constant privateProviderAdr = 0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2; // PRIVATE ПРОВАЙДЕР
-    address constant publicProviderAdr = 0x4B20993Bc481177ec7E8f571ceCaE8A9e22C02db;  // PUBLIC ПРОВАЙДЕР
+    address constant ownerAdr = 0x8E4c24e134908f2334aeF88556Fc1Daaa075A56c;           // ВЛАДЕЛЕЦ
+    address constant privateProviderAdr = 0x4490cf36A8A491800B35140A07b4190b533fFcBf; // PRIVATE ПРОВАЙДЕР
+    address constant publicProviderAdr = 0x9699f352bA7A92E7C0Ff6924ED99602cddBA38dB;  // PUBLIC ПРОВАЙДЕР
 
     // COMMENT_SCTRUC: Структура фазы.
     struct structPhase {
@@ -48,7 +48,6 @@ contract structures {
         string contactForCommunication; // контакты для связи
         address userAdr;                // адрес пользователя
         bool status;                    // статус заявки
-        bool reviewed;                  // была ли просмотрена заявка
         bool exist;                     // заявка существует
     }
     mapping (address => structApplication) strucApplications_; // обращение к структуре по АДРЕСАМ

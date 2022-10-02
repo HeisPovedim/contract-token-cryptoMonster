@@ -202,7 +202,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"GitHub/contract-token-cryptoMonster/shared/lib/ERC20.sol": "IERC20"
+			"GitHub/contract-token-cryptoMonster/backend/shared/lib/IERC20.sol": "IERC20"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -216,7 +216,7 @@
 		"remappings": []
 	},
 	"sources": {
-		"GitHub/contract-token-cryptoMonster/shared/lib/ERC20.sol": {
+		"GitHub/contract-token-cryptoMonster/backend/shared/lib/IERC20.sol": {
 			"keccak256": "0xaf036a21cac1b39999f4f57c20939eb30c1c818c3ad3ac99010fcbad0badb5ff",
 			"license": "GPL-3.0",
 			"urls": [

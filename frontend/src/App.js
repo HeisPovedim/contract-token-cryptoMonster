@@ -16,9 +16,9 @@ import { Authorization } from './pages/Authorization';
 
 const App = () => {
   const [web3] = React.useState(new Web3('HTTP://127.0.0.1:8545'));
-	const AddressContract='0xd8b934580fcE35a11B58C6D73aDeE468a2833fa8';
+	const AddressContract='0xb207EfffAAC1B7B8d0e9D3d5751056de806d4C9D';
 	const [Contract] = React.useState(new web3.eth.Contract(userList,AddressContract));
-	web3.eth.defaultAccount='0x8E4c24e134908f2334aeF88556Fc1Daaa075A56c';
+	web3.eth.defaultAccount = '0x8E4c24e134908f2334aeF88556Fc1Daaa075A56c';
 
   return (
     <>

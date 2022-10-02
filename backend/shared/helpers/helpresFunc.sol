@@ -34,4 +34,9 @@ contract helpresFunc is modifireFunc {
     function getBalancePublicToken (address _userAdr) public view returns (uint256) {
         return structUsers_[_userAdr].balance_public;
     }
+
+    // COMMENT_FUNC: Функция вернет текущий баланс эфиров.
+    function getBalanceEth(address adr) public view returns(uint256) {
+        return address(adr).balance;
+    }
 }

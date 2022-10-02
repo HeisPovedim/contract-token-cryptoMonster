@@ -6,6 +6,55 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "structUsers_",
+				"outputs": [
+					{
+						"internalType": "enum structures.Role",
+						"name": "role",
+						"type": "uint8"
+					},
+					{
+						"internalType": "string",
+						"name": "login",
+						"type": "string"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "password",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "uint256",
+						"name": "balance_overall",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "balance_seed",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "balance_private",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "balance_public",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "tokenAmount_",
 				"outputs": [
@@ -45,7 +94,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol": "structures"
+			"GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol": "structures"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -53,18 +102,18 @@
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
-			"enabled": false,
-			"runs": 200
+			"enabled": true,
+			"runs": 1
 		},
 		"remappings": []
 	},
 	"sources": {
-		"Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol": {
-			"keccak256": "0xe9a2add04f34f8edaa52c84d84390d7bd4676bcff183e2a5069f54a9827ec25e",
+		"GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol": {
+			"keccak256": "0xb7e1ff8a289e5c363e3e72f6a72d2cfb8f2292fab11020fa270a3f192df9a512",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://732eaa4014cc80d072463a5274196a0bb7de52c3021e85a031b0249eb4a869a4",
-				"dweb:/ipfs/QmcW1fVm5X2cF9hBvBQxKweLcbcLZLHh1HqDp762QQiE9F"
+				"bzz-raw://d1dcc0b7802d1d7b612433cf525e945e62862710c1bdb1e6c77ad6d870571a8b",
+				"dweb:/ipfs/QmRnaJJqfNpRWWxvhsDPpd8LYqpzNmxjaVqmbXpSp4mUQE"
 			]
 		}
 	},

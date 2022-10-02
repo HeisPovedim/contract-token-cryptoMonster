@@ -11,6 +11,82 @@
 				"type": "constructor"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "adr",
+						"type": "address"
+					}
+				],
+				"name": "getBalanceEth",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_userAdr",
+						"type": "address"
+					}
+				],
+				"name": "getBalancePrivateToken",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_userAdr",
+						"type": "address"
+					}
+				],
+				"name": "getBalancePublicToken",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_userAdr",
+						"type": "address"
+					}
+				],
+				"name": "getBalanceSeedToken",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "get_blackList",
 				"outputs": [
@@ -54,6 +130,81 @@
 				],
 				"stateMutability": "view",
 				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "structUsers_",
+				"outputs": [
+					{
+						"internalType": "enum structures.Role",
+						"name": "role",
+						"type": "uint8"
+					},
+					{
+						"internalType": "string",
+						"name": "login",
+						"type": "string"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "password",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "uint256",
+						"name": "balance_overall",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "balance_seed",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "balance_private",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "balance_public",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "tokenAmount_",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "tokenPrice_",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -69,7 +220,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"Documents/GitHub/contract-token-cryptoMonster/backend/components/PhaseSeed.sol": "PhaseSeed"
+			"GitHub/contract-token-cryptoMonster/backend/components/PhaseSeed.sol": "PhaseSeed"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -77,50 +228,50 @@
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
-			"enabled": true,
-			"runs": 1
+			"enabled": false,
+			"runs": 200
 		},
 		"remappings": []
 	},
 	"sources": {
-		"Documents/GitHub/contract-token-cryptoMonster/backend/components/PhaseSeed.sol": {
-			"keccak256": "0x920e931332c5779c318fb2c2062142c3109ef6fc8afefe7671a7b54358e25ecf",
+		"GitHub/contract-token-cryptoMonster/backend/components/PhaseSeed.sol": {
+			"keccak256": "0x98ebd949b16c4481f074ca3dd83bcd2c0fa840524d722922676322afba2a249b",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://d84ae663de8f8c3e803e711b518d0a3295a213f247ede08b30938e34117767a5",
-				"dweb:/ipfs/QmPuQx127RLGmroAUhFEy4fKt1snS8LAMHesNuJQUywBMF"
+				"bzz-raw://ed68a979003ea575256bf7bd3ad4d1ccbe2ed3b7fdedda2fcadf79c22f48d97e",
+				"dweb:/ipfs/QmPqZzBYjxFB8ZKHbsF3AaaE3cZZBvJhe162eTitMA1q5j"
 			]
 		},
-		"Documents/GitHub/contract-token-cryptoMonster/backend/shared/helpers/helpresFunc.sol": {
-			"keccak256": "0x5de0f31b2c721f2187a80581aea750f33adc647d0ac199043ddf54200215fd29",
+		"GitHub/contract-token-cryptoMonster/backend/shared/helpers/helpresFunc.sol": {
+			"keccak256": "0x3ddbddb851b15da5ec8f16c56887cf73d7f4357c7121b35680c335fe17b3810e",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://1519c07047610ed7596d29aadc2c66acbd641ace1275da8ac0fe7a7f0791f6c0",
-				"dweb:/ipfs/QmVsqyZdZTxPfwvSEYEeGr2kWtjSrvaVM4cjY8WPVUi9Ts"
+				"bzz-raw://67e0c2995856ad3955ca0230b92cfbdea7e8efdee28de165f6e2f206666250cd",
+				"dweb:/ipfs/QmRq59xFmiH4iDQFfkUZgeow2Khgeeh2qPRG8SEao3SUEC"
 			]
 		},
-		"Documents/GitHub/contract-token-cryptoMonster/backend/shared/helpers/modifireFunc.sol": {
-			"keccak256": "0xb2df03f445a18d4482d9ed070d383d0bc4244102e78e394dde2d2d1b4b048cf0",
+		"GitHub/contract-token-cryptoMonster/backend/shared/helpers/modifireFunc.sol": {
+			"keccak256": "0x791815edf6d8d205da15be693b57ddde64d7cf3bf65ad29c748e9e98c1f675ac",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://3ed7bb10cf992ce488dff80656254a8152cbd128ccc5f3fc01a6d73d22aecacd",
-				"dweb:/ipfs/Qmbu7hgAqRHEBJVSvR5gYt3gNtKESANykaK6CXcoyUREXD"
+				"bzz-raw://de960745a1c9cf451cc7401bef8c7090fec7892241a55138c64740527bc9e11c",
+				"dweb:/ipfs/QmNdesY61PZkUX2jpu1FqgUURAPcFWybkSCLG98zrHtsFG"
 			]
 		},
-		"Documents/GitHub/contract-token-cryptoMonster/backend/shared/helpers/validateFuncs.sol": {
-			"keccak256": "0xe5ae80761de92b045fc3aef1f2eecc230e54094b457520aed3187bf7292c6538",
+		"GitHub/contract-token-cryptoMonster/backend/shared/helpers/validateFuncs.sol": {
+			"keccak256": "0x60b9cdfb4a2bbfdc31d7f639fb5d515c5ad0d9aeb8100e388e3f501b3fcf37c4",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://79b619d03d75cb74c3adbe48c3baa3d7ff84b04fcf3f2d4865076672089b1624",
-				"dweb:/ipfs/QmcrfuRjB5gs2GzgDCH8ADkp26Lo6Bi8pqVdUjFu5o2c8h"
+				"bzz-raw://194b157a848877dbc641280375085bba0efc260b67a868f41205bdc1dd5e519d",
+				"dweb:/ipfs/QmeS8HCUedJDyym8Mybi3GaqAt6ABZXFBUnr9EwT6F1SKz"
 			]
 		},
-		"Documents/GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol": {
-			"keccak256": "0xca184d7adbbe19d6a20e62cddc74ada2857bfea6a3e47738364cf1f40928dbfa",
+		"GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol": {
+			"keccak256": "0x54a6f79e9e21520bf8e73924c3e95761f3664b7f8af8469e7e2c95b24e52fa23",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://9092664380761a6bde2606c20b60fda42fb4f694cd0b8eb47fdd572dc0f5ddb3",
-				"dweb:/ipfs/QmPhpmEW6Mnfik6AcFQ7iZujMtyaDu8NEQdkoj5EXSnWS2"
+				"bzz-raw://b5d6e941b630ed5dda3cfc57da8a01dcad486ef66aa8c0c44683df960112c8be",
+				"dweb:/ipfs/QmRpuRYqzBMnjz48XHcvFsrRRCSKkHVD46euPKMp3pK8dL"
 			]
 		}
 	},

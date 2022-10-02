@@ -18,8 +18,8 @@ contract PhasePrivate is validateFuncs {
             }
             require(_tempExist == false, "Application already sent"); // !: проверка на существование заявки
         }
-        require(strucApplications_[msg.sender].status == false, "Your application has already been rejected");             // !: проверка на повторную заявку
-        strucApplications_[msg.sender]  = structApplication(_name, _contactForCommunication, _userAdr, true, false, true); // ?: записать данных в структуру
+        require(strucApplications_[msg.sender].status == false, "Your application has already been rejected");      // !: проверка на повторную заявку
+        strucApplications_[msg.sender]  = structApplication(_name, _contactForCommunication, _userAdr, true, true); // ?: записать данных в структуру
         structApplicationsAmountAdr.push(msg.sender); // ?: запись адреса в массив адресов пользователей, которые подали заявку 
     }
     
@@ -30,7 +30,6 @@ contract PhasePrivate is validateFuncs {
 
     // COMMENT_FUNC: Функция принятия заявки.
     function acceptApplication (address _userAdr) public onlyPrivateProvider {
-        require(strucApplications_[msg.sender].reviewed == false, "Review the application first"); // !: проверка того, что заявка не была рассмотрена
         strucApplications_[_userAdr].status = false; // ?: изменение статуса заявки
         structApplicationsAmountAdr.push(_userAdr);  // ?: добавление пользователей в общий список адресов подавших заявку
         whiteList.push(_userAdr);  // ?: добавление пользователей в белый список
@@ -39,7 +38,6 @@ contract PhasePrivate is validateFuncs {
     
     // COMMENT_FUNC: Функция отклонения заявки.
     function deviationApplication (address _userAdr) public onlyPrivateProvider {
-        require(strucApplications_[msg.sender].reviewed == false, "Review the application first"); // !: проверка того, что заявка не была рассмотрена
         strucApplications_[_userAdr].status = false;
     }
 

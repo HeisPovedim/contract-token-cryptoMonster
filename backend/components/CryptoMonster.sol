@@ -43,6 +43,11 @@ contract CryptoMonster is IERC20, validateFuncs, PhaseSeed, PhasePrivate, PhaseP
         transfer(bestFriendAdr, 400000);     // Best friend
     }
 
+    //COMMENT_FUNC: Функция создания пользователя.
+    function createUser(address _userAdr, string memory _login, bytes32 _password) public {
+        structUsers_[_userAdr] = structUser(Role.USER, _login, _password, 0, 0, 0, 0);
+    }
+
     // COMMENT_FUNC: Функция покупки токена | например: покупатель хочет 1 токенов, для этого он должен отправить 5 вэй
     function buy(uint256 _amount) external payable returns(bool, string memory) {
         require(_amount <= tokenAmount_, "Too many tokens");
@@ -77,7 +82,7 @@ contract CryptoMonster is IERC20, validateFuncs, PhaseSeed, PhasePrivate, PhaseP
     }
 
     // COMMENT_FUNC: Функция вернет текущий баланс токена учетной записи, идентифицированный по адресу его владельца.
-    function balanceOf(address _tokenOwner) public override view returns (uint256) {
+    function balanceOf(address _tokenOwner) public override view returns(uint256) {
         if (validateOwner() == true) { // !: if пользователь админ
             return structUsers_[_tokenOwner].balance_overall;
         // !: PRIVATE
@@ -89,6 +94,22 @@ contract CryptoMonster is IERC20, validateFuncs, PhaseSeed, PhasePrivate, PhaseP
         // !: SEED
         } else {
             return structUsers_[_tokenOwner].balance_seed;
+        }
+    }
+
+    //COMMENT_FUNC: Функция вернет текущий баланс.
+    function currentBalance(address _userAdr) public view returns(uint256) {
+        if (validateOwner() == true) { // !: if пользователь админ
+            return structUsers_[_userAdr].balance_overall;
+        // !: PRIVATE
+        } else if (structPhases_[privateProviderAdr].statusPhase == true) {
+            return structUsers_[_userAdr].balance_private;
+        // !: PUBLIC
+        } else if (structPhases_[publicProviderAdr].statusPhase == true) {
+            return structUsers_[_userAdr].balance_public;
+        // !: SEED
+        } else {
+            return structUsers_[_userAdr].balance_seed;
         }
     }
 
@@ -202,8 +223,21 @@ contract CryptoMonster is IERC20, validateFuncs, PhaseSeed, PhasePrivate, PhaseP
         return allowed[_owner][_delegate];
     }
 
-    // COMMENT_FUNC: Функция добавления адреса в черный лист.
-    function addBlackList (address _userAdr) public onlyOwner {
+    // COMMENT_FUNC: Функция добавления адреса в черный лист
+    function addBlackList(address _userAdr) public onlyOwner {
         blackList.push(_userAdr); // ?: Добавление пользователя в черный список
+    }
+
+    //COMMENT_FUNC: Функция удаления адреса из черного списка
+    function removeBlackList(address _userAdr) public onlyOwner {
+        address tempAdr;
+        uint index;
+        for(uint i = 0; i < blackList.length; i++) {
+            tempAdr = blackList[i];
+            if(tempAdr == _userAdr) {
+                index = i;
+            }
+        }
+        delete blackList[index];
     }
 }

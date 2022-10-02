@@ -5,9 +5,9 @@ import "../shared/helpers/validateFuncs.sol";
 
 // @: Конструкция SEED раунда.
 contract PhaseSeed is validateFuncs {
-    address investorFirstAdr = 0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB;  // Investor1
-    address investorSecondAdr = 0x617F2E2fD72FD9D5503197092aC168c91465E7f2; // Investor2
-    address bestFriendAdr = 0x17F6AD8Ef982297579C203069C1DbfFE4348c372;     // Best friend
+    address investorFirstAdr = 0x0Ad0367e407C9B59051e7468c939bA3B53B6A3EF;  // Investor1
+    address investorSecondAdr = 0x7590D9cC314c9271c7223312ce4c2F987a226c7E; // Investor2
+    address bestFriendAdr = 0xCcBf167B833c1AC416B6014ff56b4506f47BF82e;     // Best friend
     // COMMENT: Набор начальных пользователей.
     constructor() {
         structUsers_[investorFirstAdr] = structUser(Role.INVESTOR , "Investor1", get_keccak256("3412"), 0, 0, 0, 0); // Investor1

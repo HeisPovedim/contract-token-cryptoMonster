@@ -233,6 +233,48 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_userAdr",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "_login",
+						"type": "string"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "_password",
+						"type": "bytes32"
+					}
+				],
+				"name": "createUser",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_userAdr",
+						"type": "address"
+					}
+				],
+				"name": "currentBalance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "decimals",
 				"outputs": [
@@ -273,6 +315,25 @@
 						"internalType": "address[]",
 						"name": "",
 						"type": "address[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "adr",
+						"type": "address"
+					}
+				],
+				"name": "getBalanceEth",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -394,10 +455,72 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_userAdr",
+						"type": "address"
+					}
+				],
+				"name": "removeBlackList",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "startPrivatePhase",
 				"outputs": [],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "structUsers_",
+				"outputs": [
+					{
+						"internalType": "enum structures.Role",
+						"name": "role",
+						"type": "uint8"
+					},
+					{
+						"internalType": "string",
+						"name": "login",
+						"type": "string"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "password",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "uint256",
+						"name": "balance_overall",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "balance_seed",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "balance_private",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "balance_public",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -528,17 +651,17 @@
 		},
 		"optimizer": {
 			"enabled": true,
-			"runs": 9999999
+			"runs": 1
 		},
 		"remappings": []
 	},
 	"sources": {
 		"GitHub/contract-token-cryptoMonster/backend/components/CryptoMonster.sol": {
-			"keccak256": "0x775d109fb1fadebad89e3ffc9f64f9f81792fdae257557e23da454c6fc412b40",
+			"keccak256": "0xc9618c2d2118580162587aff9989146c2696e3f510690cceeb8113193c70d72e",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://bc4b2eaa90192a84510e6b8b6d6cf3f51bf5aa2b444e3611cdc33c7d98635b7c",
-				"dweb:/ipfs/QmWEn1r2z8HYnrce4iLdwwDxfCG4fE8uepFjR8ZZHKtUsX"
+				"bzz-raw://278cfd4ea52ec6a7b99b2114a359f03636158105704ce13381229b39b5262f15",
+				"dweb:/ipfs/QmTVKmchfNEULmmsuci21jEPCx5HFQjoQ4YryBS7eyDkzU"
 			]
 		},
 		"GitHub/contract-token-cryptoMonster/backend/components/PhasePrivate.sol": {
@@ -558,19 +681,19 @@
 			]
 		},
 		"GitHub/contract-token-cryptoMonster/backend/components/PhaseSeed.sol": {
-			"keccak256": "0x34a5653d98f8952273900a4f3f6ac234983282412b82e1fe61425b3787a04d08",
+			"keccak256": "0x98ebd949b16c4481f074ca3dd83bcd2c0fa840524d722922676322afba2a249b",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://7249e91902f62352e2cfe2b020cc1b1dc5cf43258f9db5c5c1cc2f544627f356",
-				"dweb:/ipfs/Qmf8DWMT7Qy3oGBy36teFJT1TYejUQe1R2EbxqH9yB4rXQ"
+				"bzz-raw://ed68a979003ea575256bf7bd3ad4d1ccbe2ed3b7fdedda2fcadf79c22f48d97e",
+				"dweb:/ipfs/QmPqZzBYjxFB8ZKHbsF3AaaE3cZZBvJhe162eTitMA1q5j"
 			]
 		},
 		"GitHub/contract-token-cryptoMonster/backend/shared/helpers/helpresFunc.sol": {
-			"keccak256": "0x5b40e44cf32ee695c9b4a239819bd0a3aec8d89ea027b4705c7fb4d18d631cf1",
+			"keccak256": "0x3ddbddb851b15da5ec8f16c56887cf73d7f4357c7121b35680c335fe17b3810e",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://355406fc554229b0cc5bdc56bed0dfc105705c6f4a7bc7961a486c46f0a992f3",
-				"dweb:/ipfs/QmR41xNEPBJHLWzahATAfMw41E5X4KXkmBNayAKGwUMQxn"
+				"bzz-raw://67e0c2995856ad3955ca0230b92cfbdea7e8efdee28de165f6e2f206666250cd",
+				"dweb:/ipfs/QmRq59xFmiH4iDQFfkUZgeow2Khgeeh2qPRG8SEao3SUEC"
 			]
 		},
 		"GitHub/contract-token-cryptoMonster/backend/shared/helpers/modifireFunc.sol": {
@@ -606,11 +729,11 @@
 			]
 		},
 		"GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol": {
-			"keccak256": "0xe9a2add04f34f8edaa52c84d84390d7bd4676bcff183e2a5069f54a9827ec25e",
+			"keccak256": "0x54a6f79e9e21520bf8e73924c3e95761f3664b7f8af8469e7e2c95b24e52fa23",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://732eaa4014cc80d072463a5274196a0bb7de52c3021e85a031b0249eb4a869a4",
-				"dweb:/ipfs/QmcW1fVm5X2cF9hBvBQxKweLcbcLZLHh1HqDp762QQiE9F"
+				"bzz-raw://b5d6e941b630ed5dda3cfc57da8a01dcad486ef66aa8c0c44683df960112c8be",
+				"dweb:/ipfs/QmRpuRYqzBMnjz48XHcvFsrRRCSKkHVD46euPKMp3pK8dL"
 			]
 		}
 	},
