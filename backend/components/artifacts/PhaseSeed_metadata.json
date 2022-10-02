@@ -139,6 +139,45 @@
 						"type": "address"
 					}
 				],
+				"name": "strucApplications_",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "contactForCommunication",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "userAdr",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "status",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "exist",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
 				"name": "structUsers_",
 				"outputs": [
 					{
@@ -267,11 +306,11 @@
 			]
 		},
 		"GitHub/contract-token-cryptoMonster/backend/shared/lib/structures.sol": {
-			"keccak256": "0x54a6f79e9e21520bf8e73924c3e95761f3664b7f8af8469e7e2c95b24e52fa23",
+			"keccak256": "0x2de7c00292dd22e7dfadf020198b799e2a3c3b7af6873e50a28ce0070de54af9",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://b5d6e941b630ed5dda3cfc57da8a01dcad486ef66aa8c0c44683df960112c8be",
-				"dweb:/ipfs/QmRpuRYqzBMnjz48XHcvFsrRRCSKkHVD46euPKMp3pK8dL"
+				"bzz-raw://2b4bb6fa2182c160a5ff6191979b1b6103cef1daddc90f3f40f151cff940045c",
+				"dweb:/ipfs/QmXa3D2aE9ZRKGzekcFuKYV7QdxL25DJkKAnU1YgLV5Sbc"
 			]
 		}
 	},

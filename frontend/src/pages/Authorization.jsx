@@ -76,6 +76,8 @@ const Authorization = () => {
     delegate: "",
     numTokens: ""
   })
+  const [priceTokenPrivate, setPriceTokenPrivate] = useState()
+  const [priceTokenPublic, setPriceTokenPublic] = useState()
 
 
   // ^: HANDLERS
@@ -228,6 +230,14 @@ const Authorization = () => {
             <button onClick={event => funcPhaseControl(event, "end", Contract, address)}>Остановка</button>
           </div>
           <div>
+            <p style={{marginBottom: "0"}}>Изменить цену токена:</p>
+            <input onInput={event => setPriceTokenPrivate(event.target.value)} placeholder="Введите новую цену за токен" />
+            <button onClick={async () => {
+              await Contract.methods.changeTokenAmountPricePrivate(priceTokenPrivate).send({from: address})
+              alert("Вы изменили цену токена на "+priceTokenPrivate)
+            }}>Изменить</button>
+          </div>
+          <div>
             <p style={{marginBottom: "0"}}>Обработка заявок:</p>
             <button onClick={() => funcApplicationsAmountAdr()} >Получить список подающих заявки</button>
             <select defaultValue="Выберите аккаунт" onChange={event => {handlerSetAddressWhitelist(event.target.value); console.log("Current addressWhiteList: " + event.target.value)}}>
@@ -249,6 +259,15 @@ const Authorization = () => {
               alert("Заявка была отклонена.")
             }}>Отклонить</button>
           </div>
+      </div>
+      <div style={{paddingTop: "15px"}}>
+        <h3 style={{margin: "0"}}>Панель Public провайдера</h3>
+        <p style={{marginBottom: "0"}}>Изменить цену токена:</p>
+        <input onInput={event => setPriceTokenPublic(event.target.value)} placeholder="Введите новую цену за токен" />
+        <button onClick={async () => {
+          await Contract.methods.changeTokenAmountPricePublic(priceTokenPublic).send({from: address})
+          alert("Вы изменили цену токена на "+priceTokenPublic)
+        }}>Изменить</button>
       </div>
     </>
   )
