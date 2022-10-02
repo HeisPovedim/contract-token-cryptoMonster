@@ -256,25 +256,6 @@
 				"type": "function"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "_userAdr",
-						"type": "address"
-					}
-				],
-				"name": "currentBalance",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
 				"inputs": [],
 				"name": "decimals",
 				"outputs": [
@@ -689,18 +670,18 @@
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
-			"enabled": true,
-			"runs": 1
+			"enabled": false,
+			"runs": 200
 		},
 		"remappings": []
 	},
 	"sources": {
 		"GitHub/contract-token-cryptoMonster/backend/components/CryptoMonster.sol": {
-			"keccak256": "0xc9618c2d2118580162587aff9989146c2696e3f510690cceeb8113193c70d72e",
+			"keccak256": "0xe9b84a521a63d585ca77965b850c7c223d8e95af9b2507902ff35c814099a1d2",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://278cfd4ea52ec6a7b99b2114a359f03636158105704ce13381229b39b5262f15",
-				"dweb:/ipfs/QmTVKmchfNEULmmsuci21jEPCx5HFQjoQ4YryBS7eyDkzU"
+				"bzz-raw://2becb07b6ae0e0b3e2fadf51d3c0d12e17397320205207d66b3195dfc8dae459",
+				"dweb:/ipfs/QmQK2GmwfWVrMgCypKnn3ZECKo9GeBFHcDjS67wL8W1e8D"
 			]
 		},
 		"GitHub/contract-token-cryptoMonster/backend/components/PhasePrivate.sol": {

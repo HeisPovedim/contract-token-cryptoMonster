@@ -89,7 +89,7 @@ const Authorization = () => {
   setAddressInfo({
     role: basicRole,
     balanceETH: await Contract.methods.getBalanceEth(currentAddress).call(),
-    balanceCMONCurrent: await Contract.methods.currentBalance(currentAddress).call(),
+    balanceCMONCurrent: await Contract.methods.balanceOf(currentAddress).call(),
     balanceCMONSeed: await Contract.methods.getBalanceSeedToken(currentAddress).call(),
     balanceCMONPrivate: await Contract.methods.getBalancePrivateToken(currentAddress).call(),
     balanceCMONPublic: await Contract.methods.getBalancePublicToken(currentAddress).call()

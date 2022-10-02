@@ -97,22 +97,6 @@ contract CryptoMonster is IERC20, validateFuncs, PhaseSeed, PhasePrivate, PhaseP
         }
     }
 
-    //COMMENT_FUNC: Функция вернет текущий баланс.
-    function currentBalance(address _userAdr) public view returns(uint256) {
-        if (validateOwner() == true) { // !: if пользователь админ
-            return structUsers_[_userAdr].balance_overall;
-        // !: PRIVATE
-        } else if (structPhases_[privateProviderAdr].statusPhase == true) {
-            return structUsers_[_userAdr].balance_private;
-        // !: PUBLIC
-        } else if (structPhases_[publicProviderAdr].statusPhase == true) {
-            return structUsers_[_userAdr].balance_public;
-        // !: SEED
-        } else {
-            return structUsers_[_userAdr].balance_seed;
-        }
-    }
-
     // COMMENT_FUNC: Функция перевода используется для перемещения количества токенов _numTokens с баланса владельца
     // на баланс другого пользователя или получателя. Передающий владелец — msg.sender, 
     // то есть тот, кто выполняет функцию.
