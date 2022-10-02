@@ -476,6 +476,45 @@ export const userList=[
 				"type": "address"
 			}
 		],
+		"name": "strucApplications_",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "name",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "contactForCommunication",
+				"type": "string"
+			},
+			{
+				"internalType": "address",
+				"name": "userAdr",
+				"type": "address"
+			},
+			{
+				"internalType": "bool",
+				"name": "status",
+				"type": "bool"
+			},
+			{
+				"internalType": "bool",
+				"name": "exist",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
 		"name": "structUsers_",
 		"outputs": [
 			{
