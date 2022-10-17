@@ -18,7 +18,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"GitHub/contract-token-cryptoMonster/shared/lib/SafeMath.sol": "SafeMath"
+			"GitHub/contract-token-cryptoMonster/backend/shared/lib/SafeMath.sol": "SafeMath"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -32,7 +32,7 @@
 		"remappings": []
 	},
 	"sources": {
-		"GitHub/contract-token-cryptoMonster/shared/lib/SafeMath.sol": {
+		"GitHub/contract-token-cryptoMonster/backend/shared/lib/SafeMath.sol": {
 			"keccak256": "0xf430ff20a1998bdd5fa93c6b9e623cce686a19b73e97f317012b06c01de28661",
 			"license": "GPL-3.0",
 			"urls": [
